@@ -12,13 +12,14 @@ mysql -uroot -p
 SHOW VARIABLES LIKE 'validate_password%';
 set global validate_password_policy=LOW;
 set global validate_password_length=6;
-ALTER USER 'root'@'localhost' IDENTIFIED BY '123456';
+alter user 'root'@'localhost' identified by '123456';
+grant all privileges on *.* to 'root'@'%' identified by 'liyang';
 
 # database operation
 show databases;
+select version();
 create database liyang;
 use liyang;
 select database();
-select version();
 drop database liyang;
-
+show tables;
