@@ -13,7 +13,6 @@ SHOW VARIABLES LIKE 'validate_password%';
 set global validate_password_policy=LOW;
 set global validate_password_length=6;
 ALTER USER 'root'@'localhost' IDENTIFIED BY '123456';
-set password=password("yourpassword");
 
 # database operation
 show databases;
