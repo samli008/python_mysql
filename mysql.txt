@@ -4,6 +4,22 @@ yum -y install mysql-server
 systemctl start mysqld
 systemctl enable mysqld
 
-# modify temp password
+# get temp password
 grep 'temporary password' /var/log/mysqld.log
 mysql -uroot -p
+
+# modify password
+SHOW VARIABLES LIKE 'validate_password%';
+set global validate_password_policy=LOW;
+set global validate_password_length=6;
+ALTER USER 'root'@'localhost' IDENTIFIED BY '123456';
+set password=password("yourpassword");
+
+# database operation
+show databases;
+create database liyang;
+use liyang;
+select database();
+select version();
+drop database liyang;
+
