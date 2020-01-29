@@ -1,0 +1,9 @@
+# install mysql5.7
+wget https://dev.mysql.com/get/mysql57-community-release-el7-9.noarch.rpm
+yum -y install mysql-server
+systemctl start mysqld
+systemctl enable mysqld
+
+# modify temp password
+grep 'temporary password' /var/log/mysqld.log
+mysql -uroot -p
