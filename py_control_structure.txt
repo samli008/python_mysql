@@ -28,3 +28,12 @@ while a<10:
     continue
   print(a)
   a=a+1
+
+# true or false
+a=1
+b=0
+bool(a)
+bool(b)
+bool(a and b)
+bool(a or b)
+
