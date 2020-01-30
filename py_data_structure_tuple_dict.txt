@@ -20,7 +20,7 @@ print(d)
 d={
   'name': 'jood',
   'age': 9,
-  'grade': 5,
+  'grade': 5
 }
 
 print(d.keys())
