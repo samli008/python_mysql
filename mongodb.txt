@@ -24,3 +24,6 @@ ss -nlpt |grep 27017
 mongo
 
 show dbs
+help
+cls
+db.help()
