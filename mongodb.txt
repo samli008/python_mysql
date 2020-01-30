@@ -19,7 +19,8 @@ ps -ef |grep mongod
 kill pid(2017)
 ss -nlpt |grep 27017
 
-# connection mongodb
+# connection mongodb three concept:
+# database; collection; document;
 mongo
 
 show dbs
