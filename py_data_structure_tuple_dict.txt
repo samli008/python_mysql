@@ -34,3 +34,9 @@ print(d)
 d.clear()
 print(d)
 
+# data_structure_set
+a=set() #empty set
+b=set('abcdefghab')
+print(a)
+print(b)
+
