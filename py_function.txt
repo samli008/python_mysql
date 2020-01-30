@@ -1,9 +1,9 @@
 # basic function
-def sum(a,b)
-  c=a+b
+def sum(a,b):
+  c=a*b
   return c
 
 a=input('pls input first number: ')
 b=input('pls input second number: ')
 c=sum(a,b)
-print(c)
+print('a*b=',c)
