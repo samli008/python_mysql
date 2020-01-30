@@ -2,7 +2,7 @@
 y=int(input('please enter an integer: '))
 if y<0:
   print('negative number')
-if y>0:
+elif y>0:
   print('positive number')
 else:
   print('zero')
