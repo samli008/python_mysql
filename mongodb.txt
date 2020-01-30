@@ -10,7 +10,7 @@ cd /root/mongodb
 mkdir data
 mkdir log
 
-mongod --dbpath "/root/mongodb/data" --logpath "//root/mongo/log/mongo.log" --fork
+mongod --dbpath "/root/mongodb/data" --logpath "//root/mongodb/log/mongo.log" --fork
 
 mongo
 
