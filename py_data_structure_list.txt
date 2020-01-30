@@ -1,0 +1,34 @@
+# data_structure_list
+a=[1,2,3,4,5]
+print(a)
+print(a[0])
+print(a[-1])
+
+a[0]=8
+print(a[0])
+print(a[1:3])
+print(1 in a)
+
+# list_method
+print(len(a))
+print(max(a))
+print(min(a))
+
+list1=[1,2,3]
+list1.append(4)
+print(list1)
+
+list1.insert(1,2)
+print(list1)
+print(list1.count(2))
+print(list1.index(2))
+
+list1.remove(2)
+print(list1)
+
+list1.sort()
+print(list1)
+
+list1.reverse()
+print(list1)
+
