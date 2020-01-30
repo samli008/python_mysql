@@ -57,3 +57,12 @@ JSON (object and array; object is k-value; array include many object; array[],ob
         "Internship": false
     }
 ]
+
+# insert 
+db.employee.insertOne({
+...         "first_name": "Robin",
+...         "last_name": "Jackman",
+...         "title": "Software Engineer",
+...         "salary": 3000,
+...         "Internship": true
+...     })
