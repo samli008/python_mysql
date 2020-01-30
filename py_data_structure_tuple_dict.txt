@@ -17,6 +17,7 @@ print(d[1])
 d[1]='1111'
 print(d)
 
+# dict_method
 d={
   'name': 'jood',
   'age': 9,
@@ -32,5 +33,4 @@ print(d)
 
 d.clear()
 print(d)
-
 
