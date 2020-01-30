@@ -27,3 +27,11 @@ show dbs
 help
 cls
 db.help()
+
+# create database
+use demo
+db.createCollection('test1')
+show dbs
+db.getName()
+db.getCollectionNames()
+db.dropDatabase()
