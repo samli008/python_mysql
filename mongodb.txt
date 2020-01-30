@@ -6,11 +6,20 @@ mv mongodb-linux-x86_64-4.0.5 mongodb
 vi .bash_profile
 PATH=$PATH:$HOME/bin:/root/mongodb/bin
 
+# create data and log directory
 cd /root/mongodb
 mkdir data
 mkdir log
 
+# start mongod
 mongod --dbpath "/root/mongodb/data" --logpath "//root/mongodb/log/mongo.log" --fork
 
+# view delete mongod
+ps -ef |grep mongod
+kill pid(2017)
+ss -nlpt |grep 27017
+
+# connection mongodb
 mongo
 
+show dbs
