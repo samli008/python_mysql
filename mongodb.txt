@@ -39,5 +39,21 @@ db.dropDatabase()
 # JSON vs BSON
 JSON (JavaScript Object Notation)
 BSON (binary JSON)
-JSON (object and array; object is k-value; array include many object)
+JSON (object and array; object is k-value; array include many object; array[],object{})
 
+[
+    {
+        "first_name": "Robin",
+        "last_name": "Jackman",
+        "title": "Software Engineer",
+        "salary": 3000,
+        "Internship": true
+    }
+    {
+        "first_name": "Taylor",
+        "last_name": "Edward",
+        "title": "Software Architect",
+        "salary": 7500,
+        "Internship": false
+    }
+]
