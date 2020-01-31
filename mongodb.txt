@@ -106,4 +106,6 @@ db.employee.findOne()
 # update
 db.employee.updateMany({salary:{$gt:6000}},{$set:{salary:9000}})
 db.employee.updateOne({first_name:"Jack"},{$set:{salary:6000}})
+db.employee.update({first_name:'Jack'},{salary:1000}) #overwrite document
+db.employee.replaceOne({_id : ObjectId("5e33933cbf720ee48ef9b731")},{"a":1,"b":2})
 
