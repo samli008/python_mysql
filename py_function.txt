@@ -7,3 +7,13 @@ a=input('pls input first number: ')
 b=input('pls input second number: ')
 c=sum(a,b)
 print('a*b=',c)
+
+# global scope
+x=input('pls input a number: ')
+print(x)
+
+def test()
+  global x
+  x+=1
+test()
+print(x)
