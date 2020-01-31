@@ -102,3 +102,6 @@ db.employee.find().pretty()
 db.employee.find({title: "Software Architect"}).pretty()
 db.employee.find({salary:{$gt:6000}}).pretty()
 db.employee.findOne()
+
+# update
+db.employee.updateMany({salary:{$gt:6000}},{$set:{salary:9000}})
