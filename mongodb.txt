@@ -30,11 +30,13 @@ db.help()
 
 # create database
 use demo
+db #view use database
 db.createCollection('test1')
 show dbs
 db.getName()
 db.getCollectionNames()
-db.dropDatabase()
+db.dropDatabase() #use database drop database
+db.employee.drop() #drop collection drop database
 
 # JSON vs BSON
 JSON (JavaScript Object Notation)
