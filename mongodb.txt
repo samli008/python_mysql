@@ -105,3 +105,5 @@ db.employee.findOne()
 
 # update
 db.employee.updateMany({salary:{$gt:6000}},{$set:{salary:9000}})
+db.employee.updateOne({first_name:"Jack"},{$set:{salary:6000}})
+
