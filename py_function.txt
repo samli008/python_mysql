@@ -12,7 +12,7 @@ print('a*b=',c)
 x=input('pls input a number: ')
 print(x)
 
-def test()
+def test():
   global x
   x+=1
 test()
