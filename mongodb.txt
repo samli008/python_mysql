@@ -94,4 +94,10 @@ db.employee.deleteOne({"first_name": "Taylor"})
 db.employee.deleteMany({"salary": {"$gt": 2000}})
 
 # search
+show dbs
+use demo #use database
+db #view current database
+db.getCollectionNames() #view collection
+db.employee.find().pretty()
 db.employee.find({title: "Software Architect"}).pretty()
+db.employee.find({salary:{$gt:6000}}).pretty()
