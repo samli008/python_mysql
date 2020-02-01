@@ -19,11 +19,10 @@ test()
 print(x)
 
 # argument for function
-def func(a,*b):
+def func(*b):
   sum=0
   for i in b:
     sum+=i
-  sum+=a
   print(sum)
 
 func(1,2,3,4,5)
