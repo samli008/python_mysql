@@ -27,3 +27,8 @@ def func(*b):
 
 func(1,2,3,4,5)
 
+def func(**b):
+  print(b)
+  print(b['a'])
+
+func(a=1,b=2,c=3,d=4)
