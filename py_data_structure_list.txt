@@ -35,8 +35,8 @@ print(list1)
 # list comprehension
 a=[1,2,3,4]
 b=[x+3 for x in a]
-print(b)
+print "a =",a
+print "b =",b
 
 c=[str(x) for x in a]
-print(c)
-
+print "c =",c
