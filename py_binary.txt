@@ -1,0 +1,7 @@
+a='hello world'
+b=b'hello world'
+type(a)
+type(b)
+print len(a)
+print len(b)
+
