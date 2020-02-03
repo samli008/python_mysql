@@ -1,3 +1,4 @@
+# pickle.dump
 import pickle
 
 data={
@@ -7,4 +8,11 @@ data={
 
 f=open('pickle_test','wb')
 pickle.dump(data,f)
+f.close()
+
+# pickle.load
+import pickle
+f=open('test','rb')
+data=pickle.load(f)
+print data
 f.close()
