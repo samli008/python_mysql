@@ -1,19 +1,21 @@
 a='hello world'
 b=b'hello world'
-type(a)
-type(b)
-print len(a)
-print len(b)
+
+print(type(a))
+print(type(b))
+
+print(len(a))
+print(len(b))
 
 for i in a:
-  print i
+  print(i)
 
 for i in b:
-  print i
+  print(i)
 
 with open('file.bin','wb') as f:
   f.write(b'hello world')
 
 with open('file.bin','rb') as f:
   data=f.read()
-print data
+print(data)
