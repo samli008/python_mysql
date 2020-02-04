@@ -2,12 +2,12 @@
 # atributes
 # method
 class people:
-  def __init__(self,name,age)
+  def __init__(self,name,age):
     self.name=name
     self.age=age
 
-  def sayhi(self)
-    print("Hi myname is %s, and I'm %s (self.name,self.age))
+  def sayhi(self):
+    print("Hi myname is %s, and I'm %s" % (self.name,self.age))
 
 # class instance
 
