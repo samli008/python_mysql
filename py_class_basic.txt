@@ -7,7 +7,7 @@ class people:
     self.age=age
 
   def sayhi(self):
-    print("Hi myname is %s, and I'm %s" % (self.name,self.age))
+    print("Hi my name is %s, and I'm %s" % (self.name,self.age))
 
 # class instance
 
