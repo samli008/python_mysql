@@ -38,5 +38,4 @@ class people:
 # class instance
 
 someone=people(name='sam',age=20)
-print(someone.name)
-print(someone.age)
+print(someone.sayhi())
