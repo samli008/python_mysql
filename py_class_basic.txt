@@ -51,8 +51,8 @@ someone=people(name='sam',age=20)
 print(someone.sayhi())
 print(someone.get_age())
 
-print(someone.set_age(num='ab')
+someone.set_age(num='ab')
 print(someone.get_age())
 
-print(someone.set_age(num=30)
+someone.set_age(num=30)
 print(someone.get_age())
