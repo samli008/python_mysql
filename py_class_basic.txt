@@ -38,8 +38,21 @@ class people:
   def get_age(self):
     return self.__age
 
+  def set_age(self,num):
+    if isinstance(num,int):
+      if num > 0:
+        self.__age = num
+        return
+    print('format error')
+
 # class instance
 
 someone=people(name='sam',age=20)
 print(someone.sayhi())
+print(someone.get_age())
+
+print(someone.set_age(num='ab')
+print(someone.get_age())
+
+print(someone.set_age(num=30)
 print(someone.get_age())
