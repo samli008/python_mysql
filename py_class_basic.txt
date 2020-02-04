@@ -17,5 +17,11 @@ print(someone.sayhi())
 print(someone.name)
 print(someone.age)
 
+someone.age=20
+print(someone.age)
+
+someone.name='sam'
+print(someone.name)
+
 print type(someone)
 print type(people)
