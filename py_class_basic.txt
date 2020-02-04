@@ -1,5 +1,5 @@
 # The __init__() Method
-# atributes
+# attributes
 # method
 class people:
   def __init__(self,name,age):
