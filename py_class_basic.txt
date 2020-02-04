@@ -12,6 +12,7 @@ class people:
 # class instance
 
 someone=people(name='liyang',age=40)
+
 print(someone.sayhi())
 print(someone.name)
 print(someone.age)
