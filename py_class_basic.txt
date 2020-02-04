@@ -34,8 +34,11 @@ class people:
 
   def sayhi(self):
     print("Hi my name is %s, and I'm %s" % (self.__name,self.__age))
+  def get_age(self):
+    return self.__age
 
 # class instance
 
 someone=people(name='sam',age=20)
 print(someone.sayhi())
+print(someone.get_age())
