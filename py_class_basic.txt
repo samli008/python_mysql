@@ -25,3 +25,18 @@ print(someone.name)
 
 print type(someone)
 print type(people)
+
+# private attributes
+class people:
+  def __init__(self,name,age):
+    self.__name=name
+    self.__age=age
+
+  def sayhi(self):
+    print("Hi my name is %s, and I'm %s" % (self.__name,self.__age))
+
+# class instance
+
+someone=people(name='sam',age=20)
+print(someone.name)
+print(someone.age)
