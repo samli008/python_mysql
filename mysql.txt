@@ -23,3 +23,15 @@ use liyang;
 select database();
 drop database liyang;
 show tables;
+
+# table operation
+create table person
+(
+  name varchar(20),
+  phone varchar(20),
+  age int
+);
+
+show columns from person;
+desc person;
+drop table person;
