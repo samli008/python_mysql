@@ -1,0 +1,25 @@
+# oop inheritance
+class animal:
+    def eat(self):
+        print('animal is eating...')
+class bird(animal):
+    def sing(self):
+        print('bird is singing...')
+    def eat(self):
+        print('bird is eating...')
+class dog(animal):
+    def run(self):
+        print('dog is running...')
+    def eat(self):
+        print('dog is eating...')
+
+a=animal()
+a.eat()
+
+b=bird()
+b.eat()
+b.sing()
+
+c=dog()
+c.eat()
+c.run()
