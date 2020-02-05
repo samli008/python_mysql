@@ -23,3 +23,17 @@ b.sing()
 c=dog()
 c.eat()
 c.run()
+
+d=10
+e='ab'
+print(type(a))
+print(type(bird))
+print(type(d))
+print(type(max))
+print(type(10))
+print(type('12'))
+
+print(isinstance(d,int))
+print(isinstance(e,str))
+print(isinstance(a,animal))
+print(isinstance(b,dog))
