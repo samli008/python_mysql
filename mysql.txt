@@ -35,3 +35,15 @@ create table person
 show columns from person;
 desc person;
 drop table person;
+
+create table employees
+(
+  eid int,
+  birth_date date,
+  first_name varchar(20),
+  last_name varchar(20),
+  gender enum("M","F"),
+  hired_date date
+);
+
+
