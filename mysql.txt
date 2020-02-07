@@ -46,4 +46,9 @@ create table employees
   hired_date date
 );
 
+insert into person(name,phone,age)
+    values 
+    ('zhouwentao','13348977935',34),
+    ('zhongwen','13258112362',39);
 
+select * from person;
