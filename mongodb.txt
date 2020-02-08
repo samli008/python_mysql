@@ -109,3 +109,5 @@ db.employee.updateOne({first_name:"Jack"},{$set:{salary:6000}})
 db.employee.update({first_name:'Jack'},{salary:1000}) #overwrite document
 db.employee.replaceOne({_id : ObjectId("5e33933cbf720ee48ef9b731")},{"a":1,"b":2})
 
+# db.names.find() only 20 items with it to display all items
+# db.names.find().toArray() display all items
