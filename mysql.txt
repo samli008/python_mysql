@@ -32,6 +32,11 @@ create table person
   age int
 );
 
+insert into person(name,phone,age)
+    values 
+    ('zhouwentao','13348977935',34),
+    ('zhongwen','13258112362',39);
+
 show columns from person;
 desc person;
 drop table person;
@@ -46,10 +51,8 @@ create table employees
   hired_date date
 );
 
-insert into person(name,phone,age)
-    values 
-    ('zhouwentao','13348977935',34),
-    ('zhongwen','13258112362',39);
+insert into employees(eid,birth_date,first_name,last_name,gender,hired_date) values (1,"1979-04-17","li","yang","F","2007-07-09");
 
 select * from person;
 select name,phone from person;
+
