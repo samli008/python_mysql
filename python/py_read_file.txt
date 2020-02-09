@@ -1,0 +1,22 @@
+f=open('text1.txt')
+s=f.read()
+print s
+f.close()
+
+f=open('text1.txt')
+s=f.readlines()
+print s
+f.close()
+
+f=open('text1.txt')
+s=f.readline()
+print s
+f.seek(0)
+print s
+print f.tell()
+f.close()
+
+f=open('text1.txt')
+for line in f:
+  print line
+f.close()

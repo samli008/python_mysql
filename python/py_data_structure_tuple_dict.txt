@@ -1,0 +1,42 @@
+# data_structure_tuple
+t=(1,2,3)
+print(t)
+print(t[0])
+print(t[1:3])
+
+# data_structure_dict
+d={} #empty dict
+
+d={
+  1:1,
+  2:2,
+  3:3
+}
+
+print(d[1])
+d[1]='1111'
+print(d)
+
+# dict_method
+d={
+  'name': 'jood',
+  'age': 9,
+  'grade': 5
+}
+
+print(d.keys())
+print(d.values())
+print(d.get('name'))
+
+del d['name']
+print(d)
+
+d.clear()
+print(d)
+
+# data_structure_set
+a=set() #empty set
+b=set('abcdefghab')
+print(a)
+print(b)
+
