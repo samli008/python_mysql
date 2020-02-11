@@ -14,7 +14,7 @@ def hello():
     return 'hello world'
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0')
+    app.run(host='0.0.0.0',port=81,debug=True)
 
 # python app.py
 access to ip:5000 with firefox
