@@ -46,3 +46,7 @@ print(c.upper())
 
 d='this is a line'
 print(x.split(' ')
+
+# python keyword
+import keyword
+print(keyword.kwlist)
