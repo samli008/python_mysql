@@ -6,3 +6,6 @@ sys.path
 # third part module search to https://pypi.org/
 pip list
 pip install flask
+
+# third part module path 
+/usr/local/lib/python3.5/site-packages
