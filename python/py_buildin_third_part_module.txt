@@ -3,6 +3,6 @@ import sys
 sys.path
 /usr/local/lib/python3.5/
 
-# third part module search to  https://pypi.org/
+# third part module search to https://pypi.org/
 pip list
 pip install flask
