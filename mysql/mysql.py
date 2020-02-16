@@ -29,7 +29,7 @@ connection.close()
 
 # search database with dictionary cursor
 connection=pymysql.connect("192.168.20.161","root","liyang","database1")
-cursor=connection.cursor(pymysql.cursor.dictcursor)
+cursor=connection.cursor(pymysql.cursors.DictCursor)
 
 sql="select * from person;"
 count=cursor.execute(sql)
