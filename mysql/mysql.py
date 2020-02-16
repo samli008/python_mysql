@@ -43,9 +43,9 @@ result=cursor.fetchall()
 print(result)
 
 for one in result:
-  print("name is {0}".format(one[name]))
-  print("phone is {0}".format(one[phone]))
-  print("age is {0}".format(one[age]))
+  print("name is {0}".format(one['name']))
+  print("phone is {0}".format(one['phone']))
+  print("age is {0}".format(one['age']))
 
 cursor.close()
 connection.close()
