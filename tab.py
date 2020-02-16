@@ -1,5 +1,7 @@
 # pip3 install readline -i https://mirrors.aliyun.com/pypi/simple
 # copy tab.py to /usr/local/lib/python3.5/site-packages
+# import tab
+
 import sys
 import readline
 import rlcompleter
