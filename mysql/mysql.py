@@ -14,9 +14,22 @@ connection.commit()
 cursor.close()
 connection.close()
 
-# select database
+# search database default result is tuple
 connection=pymysql.connect("192.168.20.161","root","liyang","database1")
 cursor=connection.cursor()
+
+sql="select * from person;"
+count=cursor.execute(sql)
+print(count)
+result=cursor.fetchall()
+print(result)
+
+cursor.close()
+connection.close()
+
+# search database with dictionary cursor
+connection=pymysql.connect("192.168.20.161","root","liyang","database1")
+cursor=connection.cursor(pymysql.cursor.dictcursor)
 
 sql="select * from person;"
 count=cursor.execute(sql)
