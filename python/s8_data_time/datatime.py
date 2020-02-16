@@ -14,6 +14,7 @@ datetime.datetime(2020, 2, 15, 20, 10, 43, 355899)
 datetime.datetime(2020, 2, 15, 20, 10, 55, 341893)
 >>> 
 
+# timestamp
 >>> import time
 >>> a=time.time()
 >>> print(a)
