@@ -14,7 +14,7 @@ connection.commit()
 cursor.close()
 connection.close()
 
-# search database default result is tuple
+# search database default result is double tuple
 connection=pymysql.connect("192.168.20.161","root","liyang","database1")
 cursor=connection.cursor()
 
@@ -23,6 +23,11 @@ count=cursor.execute(sql)
 print(count)
 result=cursor.fetchall()
 print(result)
+
+for one in result:
+  print("name is {0}".format(one[0]))
+  print("phone is {0}".format(one[1]))
+  print("age is {0}".format(one[2]))
 
 cursor.close()
 connection.close()
@@ -36,6 +41,11 @@ count=cursor.execute(sql)
 print(count)
 result=cursor.fetchall()
 print(result)
+
+for one in result:
+  print("name is {0}".format(one[name]))
+  print("phone is {0}".format(one[phone]))
+  print("age is {0}".format(one[age]))
 
 cursor.close()
 connection.close()
