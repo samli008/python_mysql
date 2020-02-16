@@ -6,6 +6,11 @@ sys.path
 # third part module search to https://pypi.org/
 pip list
 pip install flask
+pip3 install flask
 
 # third part module path 
 /usr/local/lib/python3.5/site-packages
+
+# accelerate pip install
+pip3 install readline -i https://pypi.doubanio.com/simple
+
