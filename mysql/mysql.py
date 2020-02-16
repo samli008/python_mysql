@@ -6,7 +6,7 @@ import pymysql
 connection=pymysql.connect("192.168.20.161","root","liyang","database1",3306)
 cursor=connection.cursor()
 
-sql="insert into person(name,phone,age)values('xxx','18116583538',40);"
+sql="insert into person(name,phone,age)values('xxx','18116583538',40),('li','18116583538',40);"
 count=cursor.execute(sql)
 print(count)
 connection.commit()
