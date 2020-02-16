@@ -3,7 +3,7 @@ pip3 install pymysql -i https://mirrors.aliyun.com/pypi/simple
 import pymysql
 
 # connect mysql with ip user passwd database port
-connection=pymysql.connect("192.168.20.161","root","liyang","liyang",3306)
+connection=pymysql.connect("192.168.20.161","root","liyang","database1",3306)
 cursor=connection.cursor()
 
 sql="insert into person(name,phone,age)values('xxx','18116583538',40);"
@@ -15,7 +15,7 @@ cursor.close()
 connection.close()
 
 # select database
-connection=pymysql.connect("192.168.20.161","root","liyang","liyang",3306)
+connection=pymysql.connect("192.168.20.161","root","liyang","database1")
 cursor=connection.cursor()
 
 sql="select * from person;"
