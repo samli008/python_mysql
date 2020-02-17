@@ -15,3 +15,25 @@ def all_even(num_list):
 
 print(all_even(numbers))
 
+# pdb mode demo
+(Pdb) s
+> /root/debug_pdb.py(12)all_even()
+-> even_numbers.extend(number)
+(Pdb) list
+  7  
+  8     def all_even(num_list):
+  9       even_numbers=[]
+ 10       for number in num_list:
+ 11         if number%2==0:
+ 12  ->       even_numbers.extend(number)
+ 13       return even_numbers
+ 14  
+ 15     print(all_even(numbers))
+ 16  
+[EOF]
+(Pdb) s
+TypeError: 'int' object is not iterable
+> /root/debug_pdb.py(12)all_even()
+-> even_numbers.extend(number)
+(Pdb) p number
+2
