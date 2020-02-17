@@ -1,4 +1,5 @@
 # demo debug by pdb
+# pdb mode cli: ? list step(s) print(p)
 import pdb
 
 numbers=[1,2,3,4,5,6,10,-4,-7,0]
