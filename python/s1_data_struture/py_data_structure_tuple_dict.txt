@@ -40,3 +40,18 @@ b=set('abcdefghab')
 print(a)
 print(b)
 
+# De-duplication data_set
+>>> b=set('abbd')
+>>> print(b)
+set(['a', 'b', 'd'])
+
+>>> a=[1,2,2,3,3,5]
+>>> b=set(a)
+>>> print(a)
+[1, 2, 2, 3, 3, 5]
+>>> print(b)
+set([1, 2, 3, 5])
+>>> type(a)
+<type 'list'>
+>>> type(b)
+<type 'set'>
