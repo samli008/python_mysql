@@ -34,13 +34,7 @@ print(d)
 d.clear()
 print(d)
 
-# data_structure_set
-a=set() #empty set
-b=set('abcdefghab')
-print(a)
-print(b)
-
-# De-duplication data_set
+# data_structure_set and De-duplication
 >>> a=set('abbbcdd')
 >>> a
 set(['a', 'c', 'b', 'd'])
