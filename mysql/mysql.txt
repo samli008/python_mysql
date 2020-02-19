@@ -59,3 +59,4 @@ values
 select * from person;
 select name,phone from person;
 delete from person where name='xxx';
+delete from person where name like '%sam%';

@@ -13,6 +13,24 @@ connection.commit()
 cursor.close()
 connection.close()
 
+# connect mysql insert into rows with list and for
+connection=pymysql.connect("192.168.20.161","root","liyang","database1")
+cursor=connection.cursor()
+
+data = [
+  ['sam1', '1811177998',35],
+  ['sam2', '1811177997',34],
+  ['sam3', '1811177995',37],
+]
+for i in range(0,len(data)):
+  sql="insert into person(name,phone,age)values('%s','%s',%s);" % (data[i][0],data[i][1],data[i][2])
+  count=cursor.execute(sql)
+print('insert',i+1,'rows')
+connection.commit()
+
+cursor.close()
+connection.close()
+
 # search database default result is double tuple
 connection=pymysql.connect("192.168.20.161","root","liyang","database1")
 cursor=connection.cursor()
