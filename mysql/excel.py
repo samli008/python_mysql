@@ -26,9 +26,9 @@ import xlwt
 book = xlwt.Workbook()
 sheet = book.add_sheet('liyang')
 data = [
-  ['name', 'id'],
-  ['liyang', '1929'],
-  ['sam', '2111'],
+  ['liyang', '18116588888',40],
+  ['samli008', '18116587777',38],
+  ['sam', '18116589999',39],
 ]
 
 for i in range(0, len(data)):
