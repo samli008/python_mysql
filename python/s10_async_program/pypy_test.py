@@ -40,3 +40,13 @@ sh pypy.sh
 10^8:0.9911918640136719
 10^9:9.927046537399292
 """
+[root@c03 ~]# python
+Python 3.6.8 (default, Aug  7 2019, 17:28:10) 
+[GCC 4.8.5 20150623 (Red Hat 4.8.5-39)] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> exit()
+[root@c03 ~]# pypy
+Python 3.6.9 (1608da62bfc7, Dec 23 2019, 10:50:04)
+[PyPy 7.3.0 with GCC 7.3.1 20180303 (Red Hat 7.3.1-5)] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>>>
