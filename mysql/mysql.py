@@ -42,7 +42,7 @@ result=cursor.fetchall()
 #print(result)
 
 for one in result:
-  print(f"{one['name']},{one['phone']},{one['age']}")
+  print(f"{one[0]},{one[1]},{one[2]}")
 
 cursor.close()
 connection.close()
