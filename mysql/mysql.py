@@ -55,12 +55,9 @@ sql="select * from person;"
 count=cursor.execute(sql)
 print(count)
 result=cursor.fetchall()
-print(result)
+#print(result)
 
 for one in result:
-  print("name is {0}".format(one['name']))
-  print("phone is {0}".format(one['phone']))
-  print("age is {0}".format(one['age']))
-
+  print(f"{one['name']},{one['phone']},{one['age']}")
 cursor.close()
 connection.close()
