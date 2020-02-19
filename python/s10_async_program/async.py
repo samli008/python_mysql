@@ -15,6 +15,16 @@ def print_message(interval_seconds,message='keep alive'):
 if __name__=="__main__":
     print_message(3,'three')
 
+"""
+[root@c03 ~]# python sync.py 
+2020-02-19 04:07:45.001575-three
+2020-02-19 04:07:48.001747-three
+2020-02-19 04:07:51.001896-three
+2020-02-19 04:07:54.002028-three
+2020-02-19 04:07:57.002158-three
+2020-02-19 04:08:00.002328-three
+"""
+
 # async demo with yield next()
 import time
 from datetime import datetime
