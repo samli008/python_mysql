@@ -1,5 +1,4 @@
-# python mysql
-pip3 install pymysql -i https://mirrors.aliyun.com/pypi/simple
+# pip3 install pymysql -i https://mirrors.aliyun.com/pypi/simple
 import pymysql
 
 # connect mysql with ip user passwd database port
