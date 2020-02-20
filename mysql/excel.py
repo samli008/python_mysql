@@ -3,8 +3,15 @@
 
 # excel write with python
 import xlwt
+
 book=xlwt.Workbook()
 sheet=book.add_sheet('liyang')
+
+print(type(book))
+print(type(sheet))
+print(isinstance(book,xlwt.Workbook))
+print(isinstance(sheet,xlwt.Worksheet))
+
 sheet.write(0,0,'name')
 sheet.write(0,1,'id')
 sheet.write(1,0,'liyang')
