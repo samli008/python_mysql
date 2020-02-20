@@ -17,4 +17,5 @@ stdin,stdout,stderr = ssh.exec_command("vserver show;net int show")
 
 with open('li.txt','w') as f:
     f.writelines(stdout)
+
 ssh.close()
