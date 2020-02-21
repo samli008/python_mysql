@@ -1,8 +1,7 @@
-# first install python3.5
+# pip3 install flask -i https://mirrors.aliyun.com/pypi/simple
 python -m venv venv
-source venv/bin/activate
-pip install flask
 pip freeze >> requirements.txt
+source venv/bin/activate
 
 # vi app.py
 from flask import Flask
