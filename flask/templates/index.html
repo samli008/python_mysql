@@ -1,5 +1,18 @@
 {% extends "base.html" %}
 
 {% block content %}
+  {% if title %}
+  <h1>hello {{title}}</h1>
+  {% else %}
   <h1>hello {{name.username}}</h1>
+  {% endif %}
+  <table>
+    {% for row in rows %}
+      <tr>
+        <td>{{row.name}}</td>
+        <td>{{row.phone}}</td>
+        <td>{{row.age}}</td>
+      </tr>
+    {% endfor %}
+  </table>  
 {% endblock %}
