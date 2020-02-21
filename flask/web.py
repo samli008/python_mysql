@@ -19,7 +19,7 @@ def hello():
   cursor.close()
   connection.close()
 
-  return render_template('index.html',name=name,rows=result,title='sam')
+  return render_template('index.html',name=name,rows=result,title='mysql')
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0',port=80,debug=True)
