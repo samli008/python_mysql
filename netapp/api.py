@@ -1,7 +1,6 @@
 import sys
 from NaServer import *
 
-
 s = NaServer("192.168.20.111", 1 , 160)
 s.set_server_type("FILER")
 s.set_transport_type("HTTPS")
@@ -14,14 +13,11 @@ api = NaElement("volume-get-iter")
 xi = NaElement("desired-attributes")
 api.child_add(xi)
 
-
 xi1 = NaElement("volume-attributes")
 xi.child_add(xi1)
 
-
 xi2 = NaElement("volume-id-attributes")
 xi1.child_add(xi2)
-
 
 xi3 = NaElement("aggr-list")
 xi2.child_add(xi3)
@@ -67,3 +63,13 @@ for i in res:
   size=str(size/1024/1024)
   mb="MB"
   print(f"{node:10}{name:10}{style:10}{type:10}{state:10}{size}{mb}")
+
+"""
+[root@c03 ~]# python api.py 
+result type <class 'NaElement.NaElement'>
+res type <class 'list'>
+node      name      style     type      state     size      
+zw-01     svm_root  flex      rw        online    20.0MB
+zw-01     vol0      flex      rw        online    807.28125MB
+zw-02     vol0      flex      rw        online    807.28125MB
+"""
