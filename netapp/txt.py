@@ -1,6 +1,6 @@
 with open('lif.txt','r') as f:
   for line in f:
-    tmpline=line.split()
+    tmpline=line.split()     #line type is string; tmpline type is list
     if len(tmpline) >=4:
       if tmpline[0]=='Logical':
         print(tmpline[0],tmpline[-1])
