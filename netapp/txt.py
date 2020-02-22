@@ -1,4 +1,4 @@
-with open('li.txt','r') as f:
+with open('lif.txt','r') as f:
   for line in f:
     tmpline=line.split()
     if len(tmpline) >=4:
