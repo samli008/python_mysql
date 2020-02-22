@@ -1,3 +1,4 @@
+# XML to python with NETAPP API NaServer NaElement
 import sys
 from NaServer import *
 
