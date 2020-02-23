@@ -83,3 +83,24 @@ connection.commit()
 
 cursor.close()
 connection.close()
+
+"""
+mysql> select * from ontap;
++----+-------+----------+-------+------+--------+------+-----------+------+
+| id | node  | name     | style | type | state  | size | available | used |
++----+-------+----------+-------+------+--------+------+-----------+------+
+|  7 | zw-01 | svm_root | flex  | rw   | online |   20 |        17 |    5 |
+|  8 | zw-01 | vol0     | flex  | rw   | online |  807 |        25 |   96 |
+|  9 | zw-02 | vol0     | flex  | rw   | online |  807 |        76 |   90 |
++----+-------+----------+-------+------+--------+------+-----------+------+
+3 rows in set (0.01 sec)
+
+mysql> select * from ontap where used>80;
++----+-------+------+-------+------+--------+------+-----------+------+
+| id | node  | name | style | type | state  | size | available | used |
++----+-------+------+-------+------+--------+------+-----------+------+
+|  8 | zw-01 | vol0 | flex  | rw   | online |  807 |        25 |   96 |
+|  9 | zw-02 | vol0 | flex  | rw   | online |  807 |        76 |   90 |
++----+-------+------+-------+------+--------+------+-----------+------+
+2 rows in set (0.00 sec)
+"""
