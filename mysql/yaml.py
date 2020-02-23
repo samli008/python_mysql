@@ -4,8 +4,12 @@ import yaml
 with open('mysql.yaml','r') as f:
   result=yaml.load(f,Loader=yaml.FullLoader)
 
-  print(result)
-  print(type(result))
+print(result['mysql']['host'])
+print(result['mysql']['username'])
+print(result['mysql']['password'])
+print(result['mysql']['port'])
+
+# result is class dict
 
 """
 mysql.yaml
