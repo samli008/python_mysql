@@ -3,6 +3,7 @@ import yaml
 
 with open('mysql.yaml','r') as f:
   result=yaml.load(f,Loader=yaml.FullLoader)
+
   print(result)
   print(type(result))
 
