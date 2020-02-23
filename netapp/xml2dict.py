@@ -1,3 +1,4 @@
+# pip3 install xmltodict -i https://mirrors.aliyun.com/pypi/simple
 import sys
 import xmltodict
 from NaServer import *
