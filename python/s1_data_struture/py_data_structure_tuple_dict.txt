@@ -34,6 +34,34 @@ print(d)
 d.clear()
 print(d)
 
+# dict in python3 is OrderedDict
+
+Python 2.7.5 (default, Oct 30 2018, 23:45:53) 
+[GCC 4.8.5 20150623 (Red Hat 4.8.5-36)] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> d = {'a':-1,'b':-1,'c':-1}
+>>> d
+{'a': -1, 'c': -1, 'b': -1}
+>>> for k,v in d.items():
+...   print(k,v)
+... 
+('a', -1)
+('c', -1)
+('b', -1)
+
+Python 3.6.8 (default, Aug  7 2019, 17:28:10) 
+[GCC 4.8.5 20150623 (Red Hat 4.8.5-39)] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> d = {'a':-1,'b':-1,'c':-1}
+>>> d
+{'a': -1, 'b': -1, 'c': -1}
+>>> for k,v in d.items():
+...   print(k,v)
+... 
+a -1
+b -1
+c -1
+
 # data_structure_set and De-duplication
 >>> a=set('abbbcdd')
 >>> a
