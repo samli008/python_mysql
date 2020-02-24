@@ -62,7 +62,9 @@ xo = s.invoke_elem(api)
 doc=xmltodict.parse(xo.sprintf())
  
 a=doc['results']
-print(type(a))
+
+for k,v in a['attributes-list']['volume-attributes'][0].items():
+  print(k,v)
 
 b=a['attributes-list']['volume-attributes']
 #print(b[0])
