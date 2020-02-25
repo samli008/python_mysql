@@ -1,17 +1,26 @@
 import xml.etree.ElementTree as ET
 
-tree=ET.parse('c04.xml')
+xml=input("pls input vm name: ")
+mem=input("pls input mem size: ")
+vcpu=input("pls input vcpu size: ")
+
+xml='/etc/libvirt/qemu/'+xml+'.xml'
+mem=int(mem)*1024*1024
+mem=str(mem)
+
+tree=ET.parse(xml)
 root=tree.getroot()
 
-for vcpu in root.iter('vcpu'):
-  vcpu.attrib['current']='1'
-  vcpu.text='5'
-  print(vcpu.attrib['current'])
-  print(vcpu.text)
+for cpu in root.iter('vcpu'):
+  cpu.attrib['current']=vcpu
+  cpu.text=vcpu
+  print('cpu count ',cpu.attrib['current'])
 
-for mem in root.iter('currentMemory'):
-  mem.text='2048000'
-for memory in root.iter('memory'):
-  memory.text='2048000'
+for mem1 in root.iter('currentMemory'):
+  mem1.text=mem
+  print('memory size ',mem1.text)
 
-tree.write('c04.xml')
+for mem2 in root.iter('memory'):
+  mem2.text=mem
+
+tree.write(xml)
