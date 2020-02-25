@@ -1,4 +1,5 @@
 import xml.etree.ElementTree as ET
+import os
 
 xml=input("pls input vm name: ")
 mem=input("pls input mem size: ")
@@ -24,3 +25,4 @@ for mem2 in root.iter('memory'):
   mem2.text=mem
 
 tree.write(xml)
+os.system("virsh define %s" % (xml))
