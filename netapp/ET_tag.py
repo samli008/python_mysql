@@ -1,3 +1,4 @@
+# get xml node tree
 import xml.etree.ElementTree as ET
 
 def walkData(node,level): 
