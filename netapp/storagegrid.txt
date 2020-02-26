@@ -1,0 +1,44 @@
+# install netapp storageGrid object storage.
+# install docker
+yum -y install docker
+systemctl enable docker
+systemctl start docker
+swapoff -a
+vi /etc/fstab #swap
+
+# install storageGrid two rpms
+tar xzvf sg11.3.tgz
+cd StorageGRID-Webscale-11.3.0/rpms/
+yum -y localinstall StorageGRID-Webscale-Images-11-3-0-11.3.0-20191023.0055.49b16b9.x86_64.rpm 
+yum -y localinstall StorageGRID-Webscale-Service-11-3-0-11.3.0-20191003.1840.d557f9e.x86_64.rpm
+
+# copy config file
+[root@c02 ~]# cd dc3/
+[root@c02 dc3]# ls
+dc3-adm1.conf  dc3-gw1.conf  dc3-sn1.conf  dc3-sn2.conf  dc3-sn3.conf
+
+[root@c02 dc3]# cp * /etc/storagegrid/nodes/
+
+[root@c02 nodes]# storagegrid node validate all
+
+# start storagegrid service
+systemctl enable storagegrid
+systemctl start storagegrid
+
+# check status
+[root@c02 nodes]# docker images
+REPOSITORY           TAG                 IMAGE ID            CREATED             SIZE
+storagegrid-11.3.0   Admin_Node          9f6c0ae9e468        4 months ago        2.54 GB
+storagegrid-11.3.0   Storage_Node        3edcf6fd5ebc        4 months ago        2.61 GB
+storagegrid-11.3.0   Archive_Node        c698350abace        4 months ago        2.02 GB
+storagegrid-11.3.0   API_Gateway         e7add8afb6fc        4 months ago        1.33 GB
+
+[root@c02 nodes]# storagegrid node status
+Name                             Config-State    Run-State
+dc3-adm1                         Configured      Running
+dc3-gw1                          Configured      Running
+dc3-sn1                          Configured      Running
+dc3-sn2                          Configured      Running
+dc3-sn3                          Configured      Running
+
+[root@c02 nodes]# docker logs storagegrid-dc3-adm1
