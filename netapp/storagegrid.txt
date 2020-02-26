@@ -51,3 +51,7 @@ dc3-sn3                          Configured      Running
                 "GRID_NETWORK_DEV='eth0';",
                 "GRID_NETWORK_CONFIG='STATIC';",
             "Image": "storagegrid-11.3.0:Admin_Node",
+
+[root@c02 nodes]# docker logs storagegrid-dc3-adm1
+[INSG] Please direct your browser to http://192.168.20.181
+[INSG] Waiting for configuration information
