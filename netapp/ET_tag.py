@@ -2,7 +2,6 @@
 import xml.etree.ElementTree as ET
 
 def walkData(node,level): 
-  global layer
   count=len(node.tag)
   print(node.tag.rjust(count+level))
 
