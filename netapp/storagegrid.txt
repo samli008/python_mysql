@@ -41,4 +41,13 @@ dc3-sn1                          Configured      Running
 dc3-sn2                          Configured      Running
 dc3-sn3                          Configured      Running
 
-[root@c02 nodes]# docker logs storagegrid-dc3-adm1
+[root@c02 nodes]# docker inspect storagegrid-dc3-adm1 |grep -i grid
+        "Name": "/storagegrid-dc3-adm1",
+                "/var/lib/storagegrid/nodes/dc3-adm1/config:/config"
+                "Source": "/var/lib/storagegrid/nodes/dc3-adm1/config",
+                "GRID_NETWORK_MASK='255.255.255.0';",
+                "GRID_NETWORK_GATEWAY='192.168.20.1';",
+                "GRID_NETWORK_IP='192.168.20.181';",
+                "GRID_NETWORK_DEV='eth0';",
+                "GRID_NETWORK_CONFIG='STATIC';",
+            "Image": "storagegrid-11.3.0:Admin_Node",
