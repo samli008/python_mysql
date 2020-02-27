@@ -18,3 +18,5 @@ volume1 = Volume(name=vol1,
                  aggregates=[{'name': 'aggr1_zw01'}])
 
 volume1.post()
+
+print(f"{vol1} created successfully!")
