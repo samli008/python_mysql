@@ -55,3 +55,8 @@ dc3-sn3                          Configured      Running
 [root@c02 nodes]# docker logs storagegrid-dc3-adm1
 [INSG] Please direct your browser to http://192.168.20.181
 [INSG] Waiting for configuration information
+
+# add new node with config file
+storagegrid node validate all
+storagegrid node status node-name
+storagegrid node start node-name
