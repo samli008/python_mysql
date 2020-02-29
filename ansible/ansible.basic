@@ -44,6 +44,6 @@ ansible mfs -a 'removes=/root/net7 ls /root'
 # change directory exec cli
 ansible mfs -a 'chdir=/root/ tar czvf net7.tar net7'
 
-# shell model: ansible-doc -s shell; support |
-ansible mfs -m shell -a 'ss -nlpt |grep 22'
-
+# shell model: ansible-doc -s shell; support | *
+ansible mfs -m shell -a 'ss -nlpt | grep 22'
+ansible mfs -m shell -a "rm -f /root/*"
