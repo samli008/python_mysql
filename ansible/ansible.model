@@ -9,7 +9,7 @@ ansible mfs -m ping
 ansible mfs -m file -a "src=/etc/fstab dest=/root/fstab state=link" #create soft link
 ansible mfs -a 'ls -l /root'
 ansible mfs -m file -a "path=/root/fstab state=absent" #delete file
+ansible mfs -m file -a "path=/root/file1 state=touch" #create file
 
-
-
-
+ansible mfs -m file -a "path=/root/d1 state=directory owner=root group=root mode=755"
+ansible mfs -m file -a "path=/root/d1 state=absent"
