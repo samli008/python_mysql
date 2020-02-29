@@ -40,6 +40,7 @@ ansible mfs -m cron -a "name='reboot_system' state=absent"
 ansible mfs -a 'mkdir /data'
 ansible mfs -m filesystem -a 'fstype=xfs dev=/dev/vdb'
 ansible mfs -m mount -a 'name=/data src=/dev/vdb fstype=xfs state=mounted opts=rw'
+ansible mfs -m mount -a 'name=/data state=absent'
 
 # yum model
 ansible mfs -m yum -a 'name=vsftpd state=installed'
