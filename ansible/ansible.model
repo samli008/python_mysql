@@ -33,5 +33,5 @@ ansible mfs -m service -a 'name=network state=restarted'
 # cron model
 ansible mfs -m cron -a "name='reboot_system' hour=2 user=root job='/sbin/reboot'"
 ansible mfs -a 'crontab -l'
-ansible mfs -m cron -a "name='reboot_system' hour=2 user=root job='/sbin/reboot' state=absent"
 ansible mfs -m cron -a "name='check' minute=*/3 job='ls /root'"
+ansible mfs -m cron -a "name='reboot_system' state=absent"
