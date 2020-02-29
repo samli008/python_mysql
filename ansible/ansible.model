@@ -22,4 +22,6 @@ ansible mfs -m copy -a "src=file2 dest=/root/file22 owner=root group=root mode=7
 ansible mfs -m copy -a "src=dir1 dest=/root mode=755"
 
 # service model
-
+ansible mfs -a 'yum -y install httpd'
+ansible mfs -a 'systemctl status httpd'
+ansible mfs -m service -a 'name=httpd state=started enabled=yes'
