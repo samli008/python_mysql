@@ -19,3 +19,6 @@ ansible mfs -m copy -a "src=file2 dest=/root/file22"
 ansible mfs -m copy -a "src=file2 dest=/root/file22 owner=root group=root mode=755"
 ansible mfs -m copy -a "src=file2 dest=/root/file22 owner=root group=root mode=755 backup=yes"
 ansible mfs -m copy -a "src=dir1 dest=/root mode=755"
+
+# service model
+
