@@ -25,3 +25,5 @@ ansible mfs -m copy -a "src=dir1 dest=/root mode=755"
 ansible mfs -a 'yum -y install httpd'
 ansible mfs -a 'systemctl status httpd'
 ansible mfs -m service -a 'name=httpd state=started enabled=yes'
+ansible mfs -m service -a 'name=httpd state=stoped'
+ansible mfs -m service -a 'name=httpd state=started'
