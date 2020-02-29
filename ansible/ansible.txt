@@ -1,0 +1,5 @@
+# ansible basic not service only tool
+yum -y install ansible
+
+# Inventory
+
