@@ -13,3 +13,6 @@ ansible mfs -m file -a "path=/root/file1 state=touch" #create file
 
 ansible mfs -m file -a "path=/root/d1 state=directory owner=root group=root mode=755"
 ansible mfs -m file -a "path=/root/d1 state=absent"
+
+# copy model
+ansible mfs -m copy -a "src=file2 dest=/root/file22 owner=root group=root mode=755"
