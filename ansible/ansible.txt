@@ -1,4 +1,5 @@
-# ansible basic not service only tool
+# ansible basic not service only tool with model working.
+
 yum -y install ansible
 ssh-keygen
 ssh-copy-id
