@@ -28,7 +28,7 @@ c0[3:5]
 [mfs_client]
 c0[3:5]
 
-# ansible cli
+# ansible cli with default model command
 ansible -i /etc/ansible/hosts mfs -u root -m command -a 'date' -k
 
 ansible mfs -a 'date'
