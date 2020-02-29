@@ -15,4 +15,4 @@ c0[3:5]
 ansible -i /etc/ansible/hosts mfs -u root -m command -a 'date' -k
 
 ansible mfs -a 'date'
-
+ansible all -a 'date'
