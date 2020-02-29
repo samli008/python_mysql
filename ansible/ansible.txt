@@ -1,5 +1,7 @@
 # ansible basic not service only tool
 yum -y install ansible
+ssh-keygen
+ssh-copy-id
 
 # Inventory
 vi /etc/ansible/hosts
