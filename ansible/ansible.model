@@ -49,4 +49,5 @@ ansible mfs -m user -a 'createhome=yes home=/home/user1 password=123456 name=use
 ansible mfs -m user -a 'remove=yes name=user1 state=absent'
 
 # synchronize model
-ansible mfs -m synchronize -a 'src=/root/xxx dest=/root/'
+ansible mfs -m synchronize -a 'src=/root/file1 dest=/root/'
+ansible mfs -m synchronize -a 'src=/root/dir1 dest=/root/'
