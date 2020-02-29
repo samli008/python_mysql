@@ -34,3 +34,6 @@ ansible -i /etc/ansible/hosts mfs -u root -m command -a 'date' -k
 ansible mfs -a 'date'
 ansible all -a 'date'
 ansible mfs -m ping
+
+# if net7 exist cli not execute
+ansible mfs -a 'creates=/root/net7 ls /root'
