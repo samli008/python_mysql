@@ -37,3 +37,4 @@ ansible mfs -m ping
 
 # if net7 exist cli not execute
 ansible mfs -a 'creates=/root/net7 ls /root'
+ansible mfs -a 'chdir=/root/ tar czvf net7.tar net7'
