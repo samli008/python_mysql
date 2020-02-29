@@ -1,5 +1,6 @@
 # ansibel model view
 ansible-doc -l
+ansible-doc -s file
 
 # setup and ping model
 ansible mfs -m setup
