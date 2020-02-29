@@ -43,3 +43,7 @@ ansible mfs -m mount -a 'name=/data src=/dev/vdb fstype=xfs state=mounted opts=r
 
 # yum model
 ansible mfs -m yum -a 'name=vsftpd state=installed'
+
+# user model
+ansible mfs -m user -a 'createhome=yes home=/home/user1 password=123456 name=user1 state=present shell=/bin/bash'
+ansible mfs -m user -a 'remove=yes name=user1 state=absent'
