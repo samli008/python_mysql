@@ -45,6 +45,7 @@ ansible mfs -m mount -a 'name=/data state=absent'
 
 # yum model
 ansible mfs -m yum -a 'name=vsftpd state=installed'
+ansible mfs -m yum -a 'name=vsftpd state=absent'
 
 # user model
 ansible mfs -m user -a 'createhome=yes home=/home/user1 password=123456 name=user1 state=present shell=/bin/bash'
