@@ -1,4 +1,5 @@
 # ansible basic not service only tool with model working.
+# ansible based paramiko and PyYaml python packages.
 # install ansible and ssh trust hosts
 
 yum -y install ansible
