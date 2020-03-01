@@ -53,3 +53,6 @@ ansible mfs -m user -a 'remove=yes name=user1 state=absent'
 # synchronize model
 ansible mfs -m synchronize -a 'src=/root/file1 dest=/root/'
 ansible mfs -m synchronize -a 'src=/root/dir1 dest=/root/'
+
+# hostname model
+ansible c05 -m hostname -a 'name=c005'
