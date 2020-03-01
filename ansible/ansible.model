@@ -2,10 +2,13 @@
 ansible-doc -l
 ansible-doc -s file
 
-# setup and ping model
+# setup and ping model; Built-in jinja variable
 ansible mfs -m ping
 ansible mfs -m setup
 ansible mfs -m setup -a 'filter=ansible_devices'
+ansible mfs -m setup -a 'filter=ansible_machine'
+ansible mfs -m setup -a 'filter=ansible_distribution_version'
+ansible mfs -m setup -a 'filter=ansible_interfaces'
 
 # file model
 ansible mfs -m file -a "src=/etc/fstab dest=/root/fstab state=link" #create soft link
