@@ -3,8 +3,9 @@ ansible-doc -l
 ansible-doc -s file
 
 # setup and ping model
-ansible mfs -m setup
 ansible mfs -m ping
+ansible mfs -m setup
+ansible mfs -m setup -a 'filter=ansible_devices'
 
 # file model
 ansible mfs -m file -a "src=/etc/fstab dest=/root/fstab state=link" #create soft link
