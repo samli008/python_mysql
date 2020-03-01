@@ -1,2 +1,21 @@
 # ansible-playbook with yaml
+## httpd.yaml
+---
+- hosts: mfs
+  remote_user: root
 
+  tasks:
+    - name: install_httpd
+      yum: name=httpd
+    - name: conf_file
+      copy: src=/root/index.html dest=/var/www/html
+      notify: restart_service
+    - name: start_service
+      service: name=httpd state=started enabled=yes
+
+  handlers:
+    - name: restart_service
+      service: name=httpd state=restarted
+
+ansible-playbook -C httpd.yaml  #precheck
+ansible-playbook httpd.yaml
