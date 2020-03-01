@@ -1,0 +1,7 @@
+---
+- hosts: node
+  remote_user: root
+
+  tasks:
+    - name: start_node
+      shell: mfschunkserver start; echo "mfschunkserver start" >> /etc/rc.local; chmod 755 /etc/rc.d/rc.local

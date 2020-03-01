@@ -1,0 +1,12 @@
+- hosts: node
+  remote_user: root
+
+  tasks:
+    - name: mkdir_data 
+      file: path=/data state=directory mode=755
+    - name: disk_format
+      filesystem: fstype=xfs dev=/dev/vdb
+    - name: disk_mount
+      mount: name=/data src=/dev/vdb fstype=xfs state=mounted opts=rw
+    - name: chown_data
+      shell: chown -R mfs:mfs /data
