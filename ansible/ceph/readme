@@ -25,5 +25,4 @@ c05
 7. ansible-playbook mon_extend.yaml 
 8. ansible-playbook osd.yaml 
 
-You can execute "sh onekey" install mfs cluster. Enjoy it.
-
+You can execute "sh onekey" install ceph cluster. Enjoy it.
