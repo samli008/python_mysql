@@ -8,4 +8,4 @@
       copy: src=/root/ceph.repo dest=/etc/yum.repos.d/
 
     - name: install_ceph
-      shell: chdir=/root tar xzvf mimic.tar; yum -y install ceph-common
+      shell: chdir=/root tar xzf mimic.tar; yum -y install ceph-common
