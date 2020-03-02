@@ -1,0 +1,5 @@
+mon_ip: 192.168.20.143
+net: 192.168.20.0/24
+
+osd: vdb
+device: /dev/vdb
