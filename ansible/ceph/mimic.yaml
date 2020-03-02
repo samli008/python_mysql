@@ -1,4 +1,4 @@
-- hosts: osd
+- hosts: ceph
   remote_user: root
 
   tasks:
