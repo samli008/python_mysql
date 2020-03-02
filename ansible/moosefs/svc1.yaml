@@ -1,7 +1,0 @@
----
-- hosts: master
-  remote_user: root
-
-  tasks:
-    - name: start_master
-      shell: mfsmaster start; echo "mfsmaster -a" >> /etc/rc.local; chmod 755 /etc/rc.d/rc.local
