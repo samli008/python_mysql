@@ -9,5 +9,3 @@
 
     - name: install_ceph
       shell: chdir=/root tar xzvf mimic.tar; yum -y install ceph-common
-
-
