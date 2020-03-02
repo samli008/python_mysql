@@ -1,0 +1,13 @@
+- hosts: osd
+  remote_user: root
+
+  tasks:
+    - name: copy_mimic_ceph
+      copy: src=/root/mimic.tar dest=/root/
+    - name: copy_mimic_repo
+      copy: src=/root/ceph.repo dest=/etc/yum.repos.d/
+
+    - name: install_ceph
+      shell: chdir=/root tar xzvf mimic.tar; yum -y install ceph-common
+
+
