@@ -1,4 +1,7 @@
-# docker pull minio/minio
+# install minio server
+docker pull minio/minio
+docker load < minio.tar
+
 docker run -d -p 9000:9000 --name minio1 \
 -e "MINIO_ACCESS_KEY=admin" \
 -e "MINIO_SECRET_KEY=liyang008" \
@@ -6,6 +9,11 @@ docker run -d -p 9000:9000 --name minio1 \
 -v /config_data:/root/.minio \
 minio/minio server /data
 
+# install minio client
+wget https://dl.min.io/client/mc/release/linux-amd64/mc
+chmod +x mc
+
 # mc add minio with access and secret key
-./mc config host add minio http://ip:9000 admin 123456
-./mc admin info minio
+mc config host add minio1 http://ip:9000 admin 123456
+mc admin info minio1
+mc ls minio1
