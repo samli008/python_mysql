@@ -34,4 +34,9 @@ writeonly
 [root@c03 ~]# mc mb minio/liyang02
 Bucket created successfully `minio/liyang02`. 
 
+[root@c03 ~]# mc admin user add minio liyang liyang008
+Added user `liyang` successfully.
+[root@c03 ~]# mc admin user list minio
+enabled    liyang 
+
 
