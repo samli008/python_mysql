@@ -25,9 +25,8 @@ mc mb minio/zoom
 mc rb minio/liyang01
 mc rb --force minio/liyang01
 
-[root@c03 ~]# mc ls minio
-[2020-03-03 04:50:41 EST]      0B liyang01/
-[2020-03-03 04:50:41 EST]      0B zoom/
+mc ls minio
+mc ls minio/liyang01
 
 [root@c03 ~]# mc cp minio.tar minio/zoom
 ...o.tar:  52.03 MiB / 52.03 MiB ┃▓▓▓▓▓▓▓┃ 2.14 MiB/s 24s
