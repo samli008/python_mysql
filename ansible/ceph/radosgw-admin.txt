@@ -1,5 +1,5 @@
-# RESTfull api port: 7480 based http access
-# create user
+# RESTfull api port: 7480 based http access with s3brower
+# create user generate access key and secret key
 radosgw-admin user create --secret="123456" --uid="user01" --display-name="user01"
 
 # view user
