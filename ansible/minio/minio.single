@@ -23,3 +23,11 @@ mc admin info minio
 [2020-03-03 04:50:41 EST]      0B zoom/
 [root@c03 ~]# mc cp minio.tar minio/zoom
 ...o.tar:  52.03 MiB / 52.03 MiB ┃▓▓▓▓▓▓▓┃ 2.14 MiB/s 24s
+
+[root@c03 ~]# mc admin policy list minio
+diagnostics         
+readonly            
+readwrite           
+writeonly 
+
+ 
