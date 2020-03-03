@@ -5,7 +5,7 @@ ceph osd pool set cephfs_data pgp_num 150
 ceph fs ls
 ceph mds stat
 
-# ceph-fuse mode mount cephfs
+# user mode mount cephfs
 yum -y install ceph-fuse
 /etc/ceph/ceph.client.admin.keyring
 ceph-fuse -m node1:6789 /mnt/ceph
