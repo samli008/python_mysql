@@ -63,7 +63,7 @@ cat > liyang01.json << EOF
 }
 EOF
 
-## demo2 readonly
+## demo2 policy readonly
 cat > liyang01.json << EOF
 { 
   "Version": "2012-10-17",
