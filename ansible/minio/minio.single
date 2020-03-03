@@ -8,3 +8,4 @@ minio/minio server /data
 
 # mc add minio with access and secret key
 ./mc config host add minio http://ip:9000 admin 123456
+./mc admin info minio
