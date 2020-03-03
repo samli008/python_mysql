@@ -31,4 +31,7 @@ readonly
 readwrite           
 writeonly 
 
- 
+[root@c03 ~]# mc mb minio/liyang02
+Bucket created successfully `minio/liyang02`. 
+
+
