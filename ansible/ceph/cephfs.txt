@@ -1,9 +1,7 @@
 # set cephfs
-
 ceph osd pool set cephfs_data size 2 
 ceph osd pool set cephfs_data pg_num 150
 ceph osd pool set cephfs_data pgp_num 150
-
 ceph fs ls
 ceph mds stat
 
@@ -18,7 +16,6 @@ mount -t ceph node1:6789:/ /mnt -o name=admin,secretfile=admin.key
 echo "node1:6789:/ /mnt ceph name=admin,secretfile=/root/admin.key,noatime,_netdev 0 2" >> /etc/fstab
 
 # delete ceph fs,stop all mds first
-
 ceph fs rm cephfs --yes-i-really-mean-it
 ceph osd pool delete cephfs_metadata cephfs_metadata --yes-i-really-really-mean-it
 ceph osd pool delete cephfs_data cephfs_data --yes-i-really-really-mean-it
