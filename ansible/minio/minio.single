@@ -52,8 +52,7 @@ mc admin policy info minio readonly
 mc admin policy info minio writeonly
 mc admin policy info minio readwrite
 
-mc admin policy add minio liyang liyang.json
-cat > liyang.json << EOF
+cat > liyang01.json << EOF
 {
   "Version": "2012-10-17",
   "Statement": [
@@ -63,10 +62,12 @@ cat > liyang.json << EOF
       ],
       "Effect": "Allow",
       "Resource": [
-        "arn:aws:s3:::liyang02/*"
+        "arn:aws:s3:::liyang01/*"
       ],
       "Sid": ""
     }
   ]
 }
 EOF
+
+mc admin policy add minio liyang01 liyang01.json
