@@ -48,6 +48,8 @@ Policy readwrite is set on user `liyang`
 ang
 Policy readonly is set on user `liyang`
 
+# default policy readonly writeonly readwrite
+mc admin policy list minio
 mc admin policy info minio readonly
 mc admin policy info minio writeonly
 mc admin policy info minio readwrite
@@ -70,4 +72,6 @@ cat > liyang01.json << EOF
 }
 EOF
 
+mc admin policy list minio
 mc admin policy add minio liyang01 liyang01.json
+mc admin policy remove minio liyang01
