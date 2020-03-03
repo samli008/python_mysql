@@ -27,6 +27,8 @@ mc rb --force minio/liyang01
 
 mc ls minio
 mc ls minio/liyang01
+mc du minio
+mc du minio/liyang01
 
 [root@c03 ~]# mc cp minio.tar minio/zoom
 ...o.tar:  52.03 MiB / 52.03 MiB ┃▓▓▓▓▓▓▓┃ 2.14 MiB/s 24s
