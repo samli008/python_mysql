@@ -12,8 +12,14 @@ minio/minio server /data
 # install minio client
 wget https://dl.min.io/client/mc/release/linux-amd64/mc
 chmod +x mc
+mv mc /usr/local/sbin
 
 # mc add minio with access and secret key
-mc config host add minio1 http://ip:9000 admin 123456
-mc admin info minio1
-mc ls minio1
+mc config host add minio http://ip:9000 admin 123456
+mc admin info minio
+
+[root@c03 ~]# mc ls minio
+[2020-03-03 04:50:41 EST]      0B liyang01/
+[2020-03-03 04:50:41 EST]      0B zoom/
+[root@c03 ~]# mc cp minio.tar minio/zoom
+...o.tar:  52.03 MiB / 52.03 MiB ┃▓▓▓▓▓▓▓┃ 2.14 MiB/s 24s
