@@ -1,0 +1,13 @@
+# RESTfull api port: 7480 based http access
+# create user
+radosgw-admin user create --secret="123456" --uid="user01" --display-name="user01"
+
+# view user
+radosgw-admin user list
+adosgw-admin user info --uid=user01
+
+# delete user
+radosgw-admin user rm --uid=user01
+
+# list bucket
+radosgw-admin bucket list
