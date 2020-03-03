@@ -39,4 +39,12 @@ Added user `liyang` successfully.
 [root@c03 ~]# mc admin user list minio
 enabled    liyang 
 
+[root@c03 ~]# mc admin policy set minio readwrite user=li
+yang
+Policy readwrite is set on user `liyang`
+
+[root@c03 ~]# mc admin policy set minio readonly user=liy
+ang
+Policy readonly is set on user `liyang`
+
 
