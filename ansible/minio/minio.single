@@ -65,4 +65,6 @@ mc admin policy list minio
 mc admin policy info minio liyang01
 mc admin policy remove minio liyang01
 
-
+# add custom policy to user and view user policy
+mc admin policy set minio liyang01 user=liyang
+mc admin user info minio liyang
