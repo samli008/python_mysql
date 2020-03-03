@@ -16,6 +16,7 @@ mv mc /usr/local/sbin
 
 # mc add minio with access and secret key
 mc config host add minio http://ip:9000 admin 123456
+mc config host ls
 mc admin info minio
 
 [root@c03 ~]# mc ls minio
