@@ -24,5 +24,7 @@ c05
 6. ansible-playbook mon.yaml 
 7. ansible-playbook mon_extend.yaml 
 8. ansible-playbook osd.yaml 
+9. ansible-playbook mimic.yaml 
+10. ansible-playbook rgw.yaml 
 
 You can execute "sh onekey" install ceph cluster. Enjoy it.
