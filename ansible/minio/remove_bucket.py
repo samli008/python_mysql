@@ -25,4 +25,4 @@ try:
     print(f"{bucket.name:10}{date:15}")
 
 except:
-  print("Sorry bucket not exist!!!")
+  print("Sorry bucket not exist or not empty!!!")
