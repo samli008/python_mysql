@@ -8,4 +8,6 @@ s3=boto3.resource('s3',aws_access_key_id='C5PR8CK8FB16NGAR125W',
 print("{a:15}{b:15}".format(a='bucket',b='createTime'))
 
 for bucket in s3.buckets.all():
-  print(bucket.name)
+  name=bucket.name
+  date=str(bucket.creation_date)
+  print(f"{name:15}{date:15}")
