@@ -1,9 +1,9 @@
 # pip3 install minio -i https://mirrors.aliyun.com/pypi/simple
 from minio import Minio
 
-cq = Minio('samli008.f3322.net:9001',
+cq = Minio('samli008.f3322.net:9009',
                     access_key='admin',
-                    secret_key='liyang008',
+                    secret_key='12345678',
                     secure=False)
 
 print("{a:15}{b:25}{c:10}".format(a='bucket',b='object',c='size'))
