@@ -101,8 +101,14 @@ mc admin policy remove minio liyang01
 mc admin policy set minio liyang01 user=liyang
 mc admin user info minio liyang
 
-# S3 gateway for storageGrid
+# S3 gateway with minio for storageGrid
 docker run -d -p 9002:9000 --name storageGrid \
  -e "MINIO_ACCESS_KEY=LLO0BLYM08LZ6J97ZZUI" \
  -e "MINIO_SECRET_KEY=tQxphVxdmeeSi5xYRuss5nED+3ArPbwxoRiuzOtR" \
  minio/minio gateway s3 http://192.168.20.182:8084
+
+# S3 gateway with minio for radosgw
+docker run -d -p 9002:9000 --name s3_ceph \
+ -e "MINIO_ACCESS_KEY=C5PR8CK8FB16NGAR125W" \
+ -e "MINIO_SECRET_KEY=12345678" \
+ minio/minio gateway s3 http://192.168.20.143:7480
