@@ -41,3 +41,6 @@ s3cmd del --recursive s3://liyang01/python3
 
 # usage bucket
 s3cmd du -H s3://liyang01
+s3cmd du -H 
+
+
