@@ -32,3 +32,9 @@ s3cmd get s3://liyang02/m.py
 
 # get directory from bucket
 s3cmd get --recursive s3://liyang02/python3
+
+# delete file from bucket
+s3cmd del s3://liyang01/m.py
+
+# delete directory from bucket
+s3cmd del --recursive s3://liyang01/python3
