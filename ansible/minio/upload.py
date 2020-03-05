@@ -1,8 +1,8 @@
 import boto3
 from botocore.exceptions import ClientError
-import logging
 import os
 import sys
+import logging
 import threading
 
 s3=boto3.client('s3',aws_access_key_id='C5PR8CK8FB16NGAR125W',
@@ -28,7 +28,6 @@ class ProgressPercentage(object):
                     percentage))
             sys.stdout.flush()
 
-
 print("{a:15}{b:15}".format(a='bucket',b='createTime'))
 
 buckets=s3.list_buckets()
@@ -40,7 +39,6 @@ for bucket in buckets['Buckets']:
 def upload_file(file_name, bucket, object_name=None):
     if object_name is None:
         object_name = file_name
-
     try:
         response = s3.upload_file(file_name, bucket, object_name,Callback=ProgressPercentage(file_name))
     except ClientError as e:
