@@ -43,4 +43,9 @@ s3cmd del --recursive s3://liyang01/python3
 s3cmd du -H s3://liyang01
 s3cmd du -H 
 
+# copy file from bucket1 to bucket2
+s3cmd cp s3://liyang01/minio.tar s3://bucket001
+
+# move file from bucket1 to bucket2
+s3cmd mv s3://liyang01/minio.tar s3://bucket001
 
