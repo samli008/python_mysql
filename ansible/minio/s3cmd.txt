@@ -49,3 +49,5 @@ s3cmd cp s3://liyang01/minio.tar s3://bucket001
 # move file from bucket1 to bucket2
 s3cmd mv s3://liyang01/minio.tar s3://bucket001
 
+# sync file/director to bucket
+s3cmd sync newdir s3://bucket001
