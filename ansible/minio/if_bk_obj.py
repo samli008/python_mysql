@@ -5,10 +5,11 @@ import logging
 
 AK='C5PR8CK8FB16NGAR125W'
 SK='12345678'
+url='http://192.168.20.143:7480'
 
 s3=boto3.resource('s3',aws_access_key_id=AK,
                    aws_secret_access_key=SK,
-                   endpoint_url='http://192.168.20.143:7480')
+                   endpoint_url=url)
 
 def obj_exist(bucket,obj_name):
   for obj in bucket.objects.filter(Prefix=obj_name):
