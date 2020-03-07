@@ -5,10 +5,11 @@ import logging
 
 AK='L9JGMYNWV474ON35T8N7'
 SK='al73vUQ1dVSCJ8A8beusVlMQMjZC4oEri6yQkQsN'
+url=''http://192.168.20.182:8084'
 
 s3=boto3.resource('s3',aws_access_key_id=AK,
                    aws_secret_access_key=SK,
-                   endpoint_url='http://192.168.20.182:8084')
+                   endpoint_url=url)
 def list():
   for bucket in s3.buckets.all():
     print('bucket name: %s' % bucket.name)
