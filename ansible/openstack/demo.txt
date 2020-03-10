@@ -115,8 +115,6 @@ Core(s) per socket:    12
 
 hpc01 | SUCCESS | rc=0 >>
 
-docker ps 
-
 CONTAINER ID        IMAGE                                                                  COMMAND                  CREATED             STATUS              PORTS                    NAMES
 79a1f209dcde        10.20.10.10:4000/kolla/centos-source-horizon:rocky                     "dumb-init --single-…"   39 minutes ago      Up 39 minutes                                horizon
 f5a3b5e573bc        10.20.10.10:4000/kolla/centos-source-heat-engine:rocky                 "dumb-init --single-…"   39 minutes ago      Up 39 minutes                                heat_engine
