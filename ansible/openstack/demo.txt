@@ -324,3 +324,10 @@ hpc02 | SUCCESS | rc=0 >>
 51
 hpc03 | SUCCESS | rc=0 >>
 51
+
+10.20.10.10:6789:/         ceph       63T  2.5G   63T    1% /cephfs
+
+time dd if=/dev/zero of=testing bs=1M count=200000
+记录了200000+0 的读入
+记录了200000+0 的写出
+209715200000字节(210 GB)已复制，155.692 秒，1.3 GB/秒
