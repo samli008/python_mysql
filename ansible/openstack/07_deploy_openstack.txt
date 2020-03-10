@@ -21,9 +21,6 @@ mv pyOpenSSL-0.13.1-py2.7.egg-info pyOpenSSL-0.13.1-py2.7.egg-info.bak
 kolla-ansible -i multinode destroy --include-images --yes-i-really-really-mean-it
 
 #edit horizon container logo.svg and logo-splash.svg 
-
 docker cp horizon:/var/lib/kolla/venv/lib/python2.7/site-packages/static/dashboard/img/logo-splash.svg ./
-
 docker cp logo-splash.svg horizon:/var/lib/kolla/venv/lib/python2.7/site-packages/static/dashboard/img/
-
 docker restart horizon
