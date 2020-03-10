@@ -1,6 +1,5 @@
-mon_ip: 192.168.20.143
-net: 192.168.20.0/24
+mon_ip: 10.20.10.10
+net: 10.20.10.0/24
 
-osd: vdb
-device: /dev/vdb
-pg: 50
+osd1: [sda,sdb,sdc,sdd,sde,sdf,sdg,sdh,sdi,sdj,sdj,sdl]
+pg: 256
