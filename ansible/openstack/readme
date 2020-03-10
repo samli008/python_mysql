@@ -3,7 +3,7 @@
 3. config update docker
 4. config kolla-ansible
 5. create ceph pool for openstack
-6. set ceph pool for openstack and update global.yaml
+6. set ceph pool for openstack and update globals.yaml
 7. config kolla-ansible multinode  
 8. kolla-ansible -i multinode prechecks
 9. kolla-ansible -i multinode deploy

@@ -2,6 +2,7 @@
 kolla-ansible -i multinode prechecks
 kolla-ansible -i multinode deploy
 kolla-ansible -i multinode post-deploy
+echo "source /etc/kolla/admin-openrc.sh" >> /root/.bash_profile
 source /etc/kolla/admin-openrc.sh
 openstack server list
 nova list
