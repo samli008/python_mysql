@@ -1,4 +1,4 @@
-# install kolla-ansible
+# install kolla-ansible for all nodes
 yum -y install python-devel libffi-devel gcc openssl-devel libselinux-python git bash-completion net-tools python-pip ansible
 
 cd /root/pip

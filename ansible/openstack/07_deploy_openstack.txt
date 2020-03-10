@@ -1,4 +1,9 @@
 # deploy openstack with kolla-ansible
+## openstack manager network for vip
+## /etc/ansible/hosts
+## /etc/hosts
+## All three networks must be the same
+
 kolla-ansible -i multinode prechecks
 kolla-ansible -i multinode deploy
 kolla-ansible -i multinode post-deploy
