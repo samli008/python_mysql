@@ -25,6 +25,15 @@ cd /usr/lib64/python2.7/site-packages
 ls |grep pyOpenSSL
 mv pyOpenSSL-0.13.1-py2.7.egg-info pyOpenSSL-0.13.1-py2.7.egg-info.bak
 
+# config bridge networking on dashboard admin network interface
+1. remove router;
+2. remove network;
+3. create network without external:
+   /etc/kolla/neutron-openvswitch-agent/ml2_conf.ini
+   flat_networks = physnet1 
+4. config subnet:
+   network; gateway; dns; dhcp;
+
 # destroy openstack and docker images
 kolla-ansible -i multinode destroy --include-images --yes-i-really-really-mean-it
 
