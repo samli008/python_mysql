@@ -3,6 +3,9 @@
 ## /etc/ansible/hosts
 ## /etc/hosts
 ## All three networks must be the same
+## script worked only in ansible 2.5 or less
+yum -y remove ansible
+pip install ansible==2.5.6 -i https://mirrors.aliyun.com/pypi/simple
 
 kolla-ansible -i multinode prechecks
 kolla-ansible -i multinode deploy
