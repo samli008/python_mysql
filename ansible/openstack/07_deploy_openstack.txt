@@ -19,12 +19,6 @@ nova list
 vi /usr/share/kolla-ansible/init-runonce
 sh init-runonce
 
-pip install requests urllib3 pyOpenSSL --force --upgrade
-pip show pyOpenSSL
-cd /usr/lib64/python2.7/site-packages
-ls |grep pyOpenSSL
-mv pyOpenSSL-0.13.1-py2.7.egg-info pyOpenSSL-0.13.1-py2.7.egg-info.bak
-
 # config bridge networking on dashboard admin network interface
 1. remove router;
 2. remove network;
@@ -36,6 +30,13 @@ mv pyOpenSSL-0.13.1-py2.7.egg-info pyOpenSSL-0.13.1-py2.7.egg-info.bak
 
 # destroy openstack and docker images
 kolla-ansible -i multinode destroy --include-images --yes-i-really-really-mean-it
+
+# python error fix
+pip install requests urllib3 pyOpenSSL --force --upgrade
+pip show pyOpenSSL
+cd /usr/lib64/python2.7/site-packages
+ls |grep pyOpenSSL
+mv pyOpenSSL-0.13.1-py2.7.egg-info pyOpenSSL-0.13.1-py2.7.egg-info.bak
 
 #edit horizon container logo.svg and logo-splash.svg 
 docker cp horizon:/var/lib/kolla/venv/lib/python2.7/site-packages/static/dashboard/img/logo-splash.svg ./
