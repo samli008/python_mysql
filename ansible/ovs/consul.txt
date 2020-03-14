@@ -24,3 +24,8 @@ docker run -d --network net1 --ip 192.168.10.13 -h n13 --name n13 --privileged=t
 
 # create container with overlay network on c04
 docker run -d --network net1 --ip 192.168.10.14 -h n14 --name n14 --privileged=true c7:mfs
+
+# capture packages with tcpdump for wireshark
+tcpdump -i eth0 icmp -c 10
+tcpdump -i eth0 port 22 -c 10
+tcpdump -i eth0 -w cap1 -c 10
