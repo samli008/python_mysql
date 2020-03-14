@@ -1,0 +1,21 @@
+# create bridge named br0 on c03
+ovs-vsctl add-br br0
+# add vxlan port for br0
+ovs-vsctl add-port br0 vxlan -- set interface vxlan type=vxlan options:remote_ip=192.168.20.144
+# create container none net 
+docker run -d --net=none -h n11 --name n11 --privileged=true c7:mfs
+# add nic eth0 for container on vxbr
+ovs-docker add-port br0 eth0 n11
+# config ip for eth0 in container n11
+ip a a 192.168.100.101 dev eth0
+
+# create bridge named br0 on c04
+ovs-vsctl add-br br0
+# add vxlan port for br0
+ovs-vsctl add-port br0 vxlan -- set interface vxlan type=vxlan options:remote_ip=192.168.20.143
+# create container none net 
+docker run -d --net=none -h n12 --name n12 --privileged=true c7:mfs
+# add nic eth0 for container on vxbr
+ovs-docker add-port br0 eth0 n12
+# config ip for eth0 in container n12
+ip a a 192.168.100.102 dev eth0
