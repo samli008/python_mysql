@@ -7,6 +7,7 @@ docker run -d --net=none -h n11 --name n11 --privileged=true c7:mfs
 # add nic eth0 for container on br0
 ovs-docker add-port br0 eth0 n11
 # config ip for eth0 in container n11
+docker exec -it n11 /bin/bash
 ip a a 192.168.100.101 dev eth0
 
 # create bridge named br0 on c04
@@ -18,4 +19,5 @@ docker run -d --net=none -h n12 --name n12 --privileged=true c7:mfs
 # add nic eth0 for container on br0
 ovs-docker add-port br0 eth0 n12
 # config ip for eth0 in container n12
+docker exec -it n12 /bin/bash
 ip a a 192.168.100.102 dev eth0
