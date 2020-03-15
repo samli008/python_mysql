@@ -1,3 +1,24 @@
+## config etcd
+cat > /etc/etcd/etcd.conf << EOF
+#[Member]
+ETCD_NAME="c03"
+ETCD_DATA_DIR="/var/lib/etcd/default.etcd"
+
+ETCD_LISTEN_PEER_URLS="http://192.168.20.143:2380"
+ETCD_LISTEN_CLIENT_URLS="http://192.168.20.143:2379,http://localhost:2379"
+
+#[Clustering]
+ETCD_INITIAL_ADVERTISE_PEER_URLS="http://192.168.20.143:2380"
+ETCD_ADVERTISE_CLIENT_URLS="http://192.168.20.143:2379"
+ETCD_INITIAL_CLUSTER="c03=http://192.168.20.143:2380,c04=http://192.168.20.144:2380,c05=http://192.168.20.151:2380"
+ETCD_INITIAL_CLUSTER_TOKEN="etcd-cluster"
+ETCD_INITIAL_CLUSTER_STATE="new"
+EOF
+
+systemctl enable etcd
+systemctl start etcd
+etcdctl member list
+
 ## /etc/sysconfig/flanneld
 # Flanneld configuration options
 
@@ -11,6 +32,8 @@ FLANNEL_ETCD_PREFIX="/atomic.io/network"
 # Any additional options that you want to pass
 #FLANNEL_OPTIONS=""
 
+systemctl enable flanneld
+systemctl start flanneld
 
 etcdctl mk /atomic.io/network/config '{ "Network": "10.10.0.0/16","SubnetLen": 24,"Backend": {"Type": "vxlan"} }'
 
@@ -25,14 +48,6 @@ iptables -F
 
 [root@c03 ~]# etcdctl get /atomic.io/network/subnets/10.10.34.0-24
 {"PublicIP":"192.168.20.143","BackendType":"vxlan","BackendData":{"VtepMAC":"d2:ce:ca:cd:02:57"}}
-
-[root@c03 ~]# route -n
-Kernel IP routing table
-Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
-0.0.0.0         192.168.20.1    0.0.0.0         UG    100    0        0 eth0
-10.10.0.0       0.0.0.0         255.255.0.0     U     0      0        0 flannel.1
-10.10.34.0      0.0.0.0         255.255.255.0   U     0      0        0 docker0
-192.168.20.0    0.0.0.0         255.255.255.0   U     100    0        0 eth0
 
 [root@c03 ~]# cd /run/flannel/
 [root@c03 flannel]# ls
@@ -55,3 +70,11 @@ DropInPaths=/usr/lib/systemd/system/docker.service.d/flannel.conf
 [root@c03 ~]# cat /usr/lib/systemd/system/docker.service.d/flannel.conf
 [Service]
 EnvironmentFile=-/run/flannel/docker
+
+[root@c03 ~]# route -n
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+0.0.0.0         192.168.20.1    0.0.0.0         UG    100    0        0 eth0
+10.10.0.0       0.0.0.0         255.255.0.0     U     0      0        0 flannel.1
+10.10.34.0      0.0.0.0         255.255.255.0   U     0      0        0 docker0
+192.168.20.0    0.0.0.0         255.255.255.0   U     100    0        0 eth0
