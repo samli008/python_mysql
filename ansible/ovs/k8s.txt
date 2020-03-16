@@ -3,6 +3,7 @@ mkdir -pv /usr/local/kubernetes/{conf,bin,logs}
 cp kubectl kube-apiserver kube-scheduler kube-controller-manager /usr/local/kubernetes/bin/
 
 echo "export PATH=$PATH:/usr/local/kubernetes/bin" >> /etc/profile
+source /etc/profile
 
 vi /usr/local/kubernetes/conf/kubernetes
 KUBE_MASTER="--master=192.168.20.143:8080"
