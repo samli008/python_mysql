@@ -5,20 +5,22 @@ cp kubectl kube-apiserver kube-scheduler kube-controller-manager /usr/local/kube
 echo "export PATH=$PATH:/usr/local/kubernetes/bin" >> /etc/profile
 source /etc/profile
 
-vi /usr/local/kubernetes/conf/kubernetes
+cat > /usr/local/kubernetes/conf/kubernetes << EOF
 KUBE_MASTER="--master=192.168.20.143:8080"
 KUBE_LOG_LEVEL="--v=2"
 KUBE_LOGTOSTDERR="--logtostderr=false"
 KUBE_LOG_DIR="--log-dir=/usr/local/kubernetes/logs/"
+EOF
 
-vi /usr/local/kubernetes/conf/kube-apiserver
+cat > /usr/local/kubernetes/conf/kube-apiserver << EOF
 KUBE_API_ADDRESS="--insecure-bind-address=0.0.0.0"
 KUBE_API_PORT="--insecure-port=8080"
 KUBE_ETCD_SERVERS="--etcd-servers=http://192.168.20.143:2379,http://192.168.20.144:2379,http://192.168.20.151"
 KUBE_ALLOW_PRIV="--allow-privileged=true"
 KUBE_ADMISSION_CONTROL="--admission-control=NamespaceLifecycle,LimitRanger,SecurityContextDeny,ResourceQuota"
+EOF
 
-vi /usr/lib/systemd/system/kube-apiserver.service
+cat > /usr/lib/systemd/system/kube-apiserver.service << EOF
 [Unit]
 Description=kube-apiserver
 After=network.target
@@ -36,13 +38,14 @@ ExecStart=/usr/local/kubernetes/bin/kube-apiserver \
             $KUBE_ADMISSION_CONTROL
 [Install]
 WantedBy=multi-user.target
+EOF
 
 systemctl restart kube-apiserver
 
 kubectl get cs
 
 # kube-controller-manager
-vi /usr/lib/systemd/system/kube-controller-manager.service
+cat > /usr/lib/systemd/system/kube-controller-manager.service <<EOF
 [Unit]
 Description=kube-controller-manager
 After=network.target
@@ -55,11 +58,12 @@ ExecStart=/usr/local/kubernetes/bin/kube-controller-manager \
             $KUBE_LOG_DIR
 [Install]
 WantedBy=multi-user.target
+EOF
 
 systemctl restart kube-controller-manager
 
 # kube-scheduler.service
-vi /usr/lib/systemd/system/kube-scheduler.service
+cat > /usr/lib/systemd/system/kube-scheduler.service << EOF
 [Unit]
 Description=kube-scheduler
 After=network.target
@@ -72,6 +76,7 @@ ExecStart=/usr/local/kubernetes/bin/kube-scheduler \
             $KUBE_LOG_DIR
 [Install]
 WantedBy=multi-user.target
+EOF
 
 systemctl restart kube-scheduler
 
@@ -87,13 +92,14 @@ etcd-1               Healthy   {"health":"true"}
 mkdir -pv /usr/local/kubernetes/{conf,bin,logs}
 scp kubectl kubelet kube-proxy c04:/usr/local/kubernetes/bin/
 
-vi /usr/local/kubernetes/conf/kubernetes
+cat > /usr/local/kubernetes/conf/kubernetes << EOF
 KUBE_MASTER="--master=192.168.20.143:8080"
 KUBE_LOG_LEVEL="--v=2"
 KUBE_LOGTOSTDERR="--logtostderr=false"
 KUBE_LOG_DIR="--log-dir=/usr/local/kubernetes/logs/"
+EOF
 
-vi /usr/lib/systemd/system/kube-proxy.service
+cat > /usr/lib/systemd/system/kube-proxy.service << EOF
 [Unit]
 Description=kube-proxy
 After=network.target
@@ -106,16 +112,18 @@ ExecStart=/usr/local/kubernetes/bin/kube-proxy \
             $KUBE_LOG_DIR
 [Install]
 WantedBy=multi-user.target
+EOF
 
 systemctl restart kube-proxy
 
 docker info |grep 'Cgroup Driver'
 
-vi /usr/local/kubernetes/conf/kubelet
+cat > /usr/local/kubernetes/conf/kubelet << EOF
 KUBELET_ADDRESS="--address=192.168.20.144"
 KUBELET_ARGS="--kubeconfig=/usr/local/kubernetes/conf/kubeconfig --cgroup-driver=cgroupfs --enable-server=true --enable-debugging-handlers=true"
+EOF
 
-vi /usr/local/kubernetes/conf/kubeconfig
+cat > /usr/local/kubernetes/conf/kubeconfig << EOF
 apiVersion: v1
 kind: Config
 users:
@@ -130,8 +138,9 @@ contexts:
     user: kubelet
   name: default
 current-context: default
+EOF
 
-vi /usr/lib/systemd/system/kubelet.service
+cat > /usr/lib/systemd/system/kubelet.service << EOF
 [Unit]
 Description=kubelet
 After=docker.target
@@ -146,6 +155,7 @@ ExecStart=/usr/local/kubernetes/bin/kubelet \
             $KUBELET_ARGS
 [Install]
 WantedBy=multi-user.target
+EOF
 
 systemctl restart kubelet
 
