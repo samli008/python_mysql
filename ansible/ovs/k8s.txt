@@ -80,4 +80,27 @@ etcd-0               Healthy   {"health":"true"}
 etcd-2               Healthy   {"health":"true"}   
 etcd-1               Healthy   {"health":"true"}  
 
+# deploy node on c04
+mkdir -pv /usr/local/kubernetes/{conf,bin,logs}
+scp kubectl kubelet kube-proxy c04:/usr/local/kubernetes/bin/
+
+vi /usr/local/kubernetes/conf/kubernetes
+KUBE_MASTER="--master=192.168.20.143:8080"
+KUBE_LOG_LEVEL="--v=2"
+KUBE_LOGTOSTDERR="--logtostderr=false"
+KUBE_LOG_DIR="--log-dir=/usr/local/kubernetes/logs/"
+
+vi /usr/lib/systemd/system/kube-proxy.service
+[Unit]
+Description=kube-proxy
+After=network.target
+[Service]
+EnvironmentFile=-/usr/local/kubernetes/conf/kubernetes
+ExecStart=/usr/local/kubernetes/bin/kube-proxy \
+            $KUBE_MASTER \
+            $KUBE_LOG_LEVEL \
+            $KUBE_LOGTOSTDERR \
+            $KUBE_LOG_DIR
+[Install]
+WantedBy=multi-user.target
 
