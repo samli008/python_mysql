@@ -37,3 +37,47 @@ WantedBy=multi-user.target
 systemctl restart kube-apiserver
 
 kubectl get cs
+
+# kube-controller-manager
+vi /usr/lib/systemd/system/kube-controller-manager.service
+[Unit]
+Description=kube-controller-manager
+After=network.target
+[Service]
+EnvironmentFile=-/usr/local/kubernetes/conf/kubernetes
+ExecStart=/usr/local/kubernetes/bin/kube-controller-manager \
+            $KUBE_MASTER \
+            $KUBE_LOG_LEVEL \
+            $KUBE_LOGTOSTDERR \
+            $KUBE_LOG_DIR
+[Install]
+WantedBy=multi-user.target
+
+systemctl restart kube-controller-manager
+
+# kube-scheduler.service
+vi /usr/lib/systemd/system/kube-scheduler.service
+[Unit]
+Description=kube-scheduler
+After=network.target
+[Service]
+EnvironmentFile=-/usr/local/kubernetes/conf/kubernetes
+ExecStart=/usr/local/kubernetes/bin/kube-scheduler \
+            $KUBE_MASTER \
+            $KUBE_LOG_LEVEL \
+            $KUBE_LOGTOSTDERR \
+            $KUBE_LOG_DIR
+[Install]
+WantedBy=multi-user.target
+
+systemctl restart kube-scheduler
+
+[root@c03 system]# kubectl get cs
+NAME                 STATUS    MESSAGE             ERROR
+controller-manager   Healthy   ok                  
+scheduler            Healthy   ok                  
+etcd-0               Healthy   {"health":"true"}   
+etcd-2               Healthy   {"health":"true"}   
+etcd-1               Healthy   {"health":"true"}  
+
+
