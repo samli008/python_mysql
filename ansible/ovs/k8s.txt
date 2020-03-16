@@ -45,7 +45,7 @@ systemctl restart kube-apiserver
 kubectl get cs
 
 # kube-controller-manager
-cat > /usr/lib/systemd/system/kube-controller-manager.service <<EOF
+cat > /usr/lib/systemd/system/kube-controller-manager.service << EOF
 [Unit]
 Description=kube-controller-manager
 After=network.target
