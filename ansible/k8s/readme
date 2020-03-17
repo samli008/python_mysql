@@ -1,0 +1,9 @@
+1. docker.yaml
+2. etcd.yaml
+3. apiserver.yaml
+4. controller_manager_scheduler.yaml
+5. node.yaml
+6. sh label
+
+kubectl get cs
+kubectl get node
