@@ -6,3 +6,12 @@
       yum: name=flannel state=installed
     - name: config flanneld
       template: dest=/etc/sysconfig/flanneld src=flanneld.j2
+
+## tree templates
+[root@c03 ~]# tree
+.
+├── etcd.yaml
+├── flannel.yaml
+└── templates
+    ├── etcd.conf.j2
+    └── flanneld.j2
