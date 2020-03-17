@@ -16,4 +16,3 @@
 ├── etcd.yaml
 └── templates
     └── etcd.conf.j2
-
