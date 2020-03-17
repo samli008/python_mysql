@@ -4,6 +4,8 @@
 4. controller_manager_scheduler.yaml
 5. node.yaml
 6. sh label
+7. load.yaml
+8. kubectl apply -f nginx.yaml
 
 etcdctl member list
 kubectl get cs
