@@ -2,7 +2,7 @@
   remote_user: root
 
   tasks:
-    - name: install etcd
-      yum: name=etcd state=installed
     - name: install flannel
       yum: name=flannel state=installed
+    - name: config flanneld
+      template: dest=/etc/sysconfig/flanneld src=flanneld.j2
