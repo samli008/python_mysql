@@ -8,7 +8,3 @@
       yum: name=docker-ce state=installed
     - name: start_docker
       service: name=docker state=started enabled=yes
-    - name: install etcd
-      yum: name=etcd state=installed
-    - name: install flannel
-      yum: name=flannel state=installed
