@@ -1,5 +1,7 @@
 - hosts: all
   remote_user: root
+  vars_files:
+    - var.yaml
 
   tasks:
     - name: install flannel
