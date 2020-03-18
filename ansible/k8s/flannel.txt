@@ -32,14 +32,10 @@ FLANNEL_ETCD_PREFIX="/atomic.io/network"
 # Any additional options that you want to pass
 #FLANNEL_OPTIONS=""
 
-systemctl enable flanneld
-systemctl start flanneld
-
 etcdctl mk /atomic.io/network/config '{ "Network": "10.10.0.0/16","SubnetLen": 24,"Backend": {"Type": "vxlan"} }'
 
-iptables -P INPUT ACCEPT
-iptables -P FORWARD ACCEPT
-iptables -F
+systemctl enable flanneld
+systemctl start flanneld
 
 [root@c03 ~]# etcdctl ls /atomic.io/network/subnets
 /atomic.io/network/subnets/10.10.32.0-24
@@ -69,6 +65,9 @@ sed -i "s/dockerd/& --bip=10.10.34.1\/24 --mtu=1450/" /usr/lib/systemd/system/do
 
 systemctl daemon-reload
 systemctl restart docker
+
+iptables -P INPUT ACCEPT
+iptables -P FORWARD ACCEPT
 
 [root@c03 ~]# systemctl show docker |grep flannel.conf
 DropInPaths=/usr/lib/systemd/system/docker.service.d/flannel.conf
