@@ -11,7 +11,7 @@
 11. load.yaml
 12. kubectl apply -f nginx.yaml
 13. kubectl apply -f nginx-service.yaml
-14. kubectl apply -f dashborad.yaml
+14. kubectl apply -f dashboard.yaml
 
 etcdctl member list
 kubectl get cs
