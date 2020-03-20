@@ -6,7 +6,7 @@
 6. node.yaml
 7. sh label; swapoff -a; /etc/fstab
 8. etcdctl mk /atomic.io/network/config '{ "Network": "10.10.0.0/16","SubnetLen": 24,"Backend": {"Type": "vxlan"} }'
-9. flannel.yaml
+9. flannel.yaml; etcdctl ls /atomic.io/network/subnets
 10. sh flannel_docker
 11. load.yaml
 12. kubectl apply -f nginx.yaml
