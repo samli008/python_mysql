@@ -7,10 +7,11 @@
 7. sh label; swapoff -a; /etc/fstab
 8. etcdctl mk /atomic.io/network/config '{ "Network": "10.10.0.0/16","SubnetLen": 24,"Backend": {"Type": "vxlan"} }'
 9. flannel.yaml
-10. load.yaml
-11. kubectl apply -f nginx.yaml
-12. kubectl apply -f nginx-service.yaml
-13. kubectl apply -f dashborad.yaml
+10. sh flannel_docker
+11. load.yaml
+12. kubectl apply -f nginx.yaml
+13. kubectl apply -f nginx-service.yaml
+14. kubectl apply -f dashborad.yaml
 
 etcdctl member list
 kubectl get cs
