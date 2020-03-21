@@ -15,7 +15,7 @@ defaults
     timeout server 3600s
     maxconn  10240
 
-listen shijiangetcp
+listen liyangtcp
     bind 0.0.0.0:80
     balance roundrobin
     server tcp03 192.168.20.143:31000 weight 1
