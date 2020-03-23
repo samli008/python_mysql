@@ -24,6 +24,7 @@ ETCD_ADVERTISE_CLIENT_URLS="https://{{ ansible_eth0.ipv4.address}}:2379"
 ETCD_INITIAL_CLUSTER="c03=https://{{node1}}:2380,c04=https://{{node2}}:2380,c05=https://{{node3}}:2380"
 ETCD_INITIAL_CLUSTER_TOKEN="etcd-cluster"
 ETCD_INITIAL_CLUSTER_STATE="new"
+
 ETCD_CERT_FILE="/usr/local/ssl/etcd/server.pem"
 ETCD_KEY_FILE="/usr/local/ssl/etcd/server-key.pem"
 ETCD_TRUSTED_CA_FILE="/usr/local/ssl/etcd/ca.pem"
