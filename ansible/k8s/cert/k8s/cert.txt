@@ -86,8 +86,8 @@ cat > kube-proxy-csr.json << EOF
   "names": [
     {
       "C": "CN",
-      "L": "Hangzhou",
-      "ST": "Hangzhou",
+      "L": "Chengdu",
+      "ST": "Chengdu",
       "O": "k8s",
       "OU": "System"
     }
