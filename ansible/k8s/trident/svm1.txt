@@ -8,3 +8,22 @@ ly::> vs show svm1 -fields aggr-list
 vserver aggr-list 
 ------- --------- 
 svm1    aggr1 
+
+ly::> vserver nfs create -access true -v3 enabled -v4.0 disabled -tcp enabled -vserver svm1
+ly::> vserver nfs modify -showmount enabled
+ly::> export-policy create -policyname myk8scluster -vserver svm1
+ly::> export-policy rule create -vserver svm1 -policyname default -protocol nfs3 -clientmatch 0.0.0.0/0 -rorule  none -rwrule none -superuser none
+ly::> export-policy rule create -vserver svm1 -policyname myk8scluster -protocol nfs3 -clientmatch 0.0.0.0/0 -rorule any -rwrule any -superuser any
+ly::> export-policy rule show -policyname myk8scluster -instance
+
+                                    Vserver: svm1
+                                Policy Name: myk8scluster
+                                 Rule Index: 1
+                            Access Protocol: nfs3
+List of Client Match Hostnames, IP Addresses, Netgroups, or Domains: 0.0.0.0/0
+                             RO Access Rule: any
+                             RW Access Rule: any
+User ID To Which Anonymous Users Are Mapped: 65534
+                   Superuser Security Types: any
+               Honor SetUID Bits in SETATTR: true
+                  Allow Creation of Devices: true
