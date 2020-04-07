@@ -1,0 +1,10 @@
+# svm config
+ly::> aggr create -aggregate aggr1 -diskcount 24 -raidtype raid_dp -maxraidsize 24 -node ly-01
+ly::> vserver create svm1
+ly::> net int create -vserver svm1 -lif nfs_lif -home-node ly-01 -home-port e0c -role data -data-protocol nfs -address 192.168.20.114 -netmask 255.255.255.0
+ly::> vs modify -vserver svm1 -aggr-list aggr1
+ly::> vs show svm1 -fields aggr-list 
+  (vserver show)
+vserver aggr-list 
+------- --------- 
+svm1    aggr1 

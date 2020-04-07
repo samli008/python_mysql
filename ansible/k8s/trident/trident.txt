@@ -1,0 +1,8 @@
+# on k8s master node
+[root@c03 trident-installer]# ./tridentctl -n trident create backend -f backend.json
+[root@c03 trident-installer]# ./tridentctl -n trident get backend 
++--------------+----------------+--------------------------------------+--------+---------+
+|     NAME     | STORAGE DRIVER |                 UUID                 | STATE  | VOLUMES |
++--------------+----------------+--------------------------------------+--------+---------+
+| ontap-Volume | ontap-nas      | eebc3a94-f405-4da7-854a-4e8971bd436b | online |       0 |
++--------------+----------------+--------------------------------------+--------+---------+
