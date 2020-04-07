@@ -1,0 +1,12 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: volume
+provisioner: csi.trident.netapp.io
+parameters:
+  backendType: "ontap-nas"
+  media: "hdd"
+  provisioningType: "thin"
+  snapshots: "true"
+reclaimPolicy: Delete
+allowVolumeExpansion: true
