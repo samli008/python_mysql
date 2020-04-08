@@ -26,13 +26,16 @@ kubectl apply -f sc.yaml
 kubectl apply -f pvc.yaml 
 kubectl apply -f nginx-ontap.yaml
 
+[root@k1 trident-installer]# kubectl get pv
+NAME                                       CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM        STORAGECLASS   REASON   AGE
+pvc-1b9d8635-9697-481d-b87c-0e0bcac77cb9   3Gi        RWX            Delete           Bound    default/v2   volume                  18m
+pvc-324dcb67-c37c-472e-9c58-52f7069f43a5   2Gi        RWX            Delete           Bound    default/v1   volume                  32m
+
 [root@k1 trident-installer]# showmount -e 192.168.20.114
 Export list for 192.168.20.114:
 /                                                 (everyone)
 /trident_pvc_1b9d8635_9697_481d_b87c_0e0bcac77cb9 (everyone)
 /trident_pvc_324dcb67_c37c_472e_9c58_52f7069f43a5 (everyone)
-/trident_pvc_5a6dd0f4_61f6_41b5_b914_1ae6b207ec41 (everyone)
-/trident_pvc_7c2543d4_48e3_4070_baa2_8224a76e7831 (everyone)
 
 # on Cmode ontap
 ly::> vol show 
@@ -45,12 +48,7 @@ svm1      trident_pvc_1b9d8635_9697_481d_b87c_0e0bcac77cb9
                        aggr1        online     RW          3GB     3.00GB    0%
 svm1      trident_pvc_324dcb67_c37c_472e_9c58_52f7069f43a5 
                        aggr1        online     RW          2GB     2.00GB    0%
-svm1      trident_pvc_5a6dd0f4_61f6_41b5_b914_1ae6b207ec41 
-                       aggr1        online     RW          2GB     2.00GB    0%
-svm1      trident_pvc_7c2543d4_48e3_4070_baa2_8224a76e7831 
-                       aggr1        online     RW          2GB     2.00GB    0%
 svm2      svm_root     aggr2        online     RW         20MB    18.51MB    2%
-8 entries were displayed.
 
 ly::> net int show -role data
   (network interface show)
