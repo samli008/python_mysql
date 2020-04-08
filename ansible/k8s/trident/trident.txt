@@ -1,3 +1,7 @@
+# on all nodes
+yum -y install nfs-utils
+yum -y install iscsi-initiator-utils
+
 # on k8s master node
 [root@c03 trident-installer]# ./tridentctl install -n trident
 [root@c03 trident-installer]# ./tridentctl -n trident create backend -f backend.json
