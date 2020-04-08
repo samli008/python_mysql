@@ -10,4 +10,9 @@
 
 [root@c03 trident-installer]# ./tridentctl get backend -n trident -o json
 
-
+[root@k1 trident-installer]# kubectl get tridentnodes -n trident
+NAME   AGE
+k1     5m23s
+k2     5m24s
+k3     5m23s
+k4     5m23s
