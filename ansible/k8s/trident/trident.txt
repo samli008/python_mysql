@@ -26,6 +26,14 @@ kubectl apply -f sc.yaml
 kubectl apply -f pvc.yaml 
 kubectl apply -f nginx-ontap.yaml
 
+[root@k1 trident-installer]# showmount -e 192.168.20.114
+Export list for 192.168.20.114:
+/                                                 (everyone)
+/trident_pvc_1b9d8635_9697_481d_b87c_0e0bcac77cb9 (everyone)
+/trident_pvc_324dcb67_c37c_472e_9c58_52f7069f43a5 (everyone)
+/trident_pvc_5a6dd0f4_61f6_41b5_b914_1ae6b207ec41 (everyone)
+/trident_pvc_7c2543d4_48e3_4070_baa2_8224a76e7831 (everyone)
+
 # on Cmode ontap
 ly::> vol show 
 Vserver   Volume       Aggregate    State      Type       Size  Available Used%
@@ -43,3 +51,11 @@ svm1      trident_pvc_7c2543d4_48e3_4070_baa2_8224a76e7831
                        aggr1        online     RW          2GB     2.00GB    0%
 svm2      svm_root     aggr2        online     RW         20MB    18.51MB    2%
 8 entries were displayed.
+
+ly::> net int show -role data
+  (network interface show)
+            Logical    Status     Network            Current       Current Is
+Vserver     Interface  Admin/Oper Address/Mask       Node          Port    Home
+----------- ---------- ---------- ------------------ ------------- ------- ----
+svm1
+            nfs_lif      up/up    192.168.20.114/24  ly-01         e0c     true
