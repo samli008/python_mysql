@@ -1,2 +1,0 @@
-ansible-playbook node.yaml 
-ansible-playbook master.yaml
