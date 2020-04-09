@@ -1,1 +1,0 @@
-pod-->pvc-->sc-->backend(trident)-->svm(ontap)
