@@ -2,6 +2,7 @@
 pip3 install openpyxl -i https://mirrors.aliyun.com/pypi/simple
 
 # create first sheet
+python
 from openpyxl import Workbook
 wb=Workbook()
 wb.create_sheet('liyang')
