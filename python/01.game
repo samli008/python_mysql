@@ -1,0 +1,9 @@
+tmp=input("pls input number:")
+guess=int(tmp)
+
+if guess==8:
+  print("you guess bingo!")
+else:
+  print("you not guess!")
+
+print("game over.")
