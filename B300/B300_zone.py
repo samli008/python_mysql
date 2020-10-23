@@ -6,7 +6,7 @@ log_file = open(log_filepath,"r")
 cmds = log_file.readlines()
 log = open(r"c:\netapp\\"+"zone.txt",'w')
 
-# storage ports get
+# ports wwn to list
 vwwn=[]
 wwn=[]
 sv=[]
