@@ -1,0 +1,5 @@
+switchshow
+portshow 0
+portshow 1
+portshow 4
+portshow 5
